@@ -1,0 +1,9 @@
+{
+  "name": "insightscs-landing-page",
+  "version": "1.0.0",
+  "description": "InsightSCS Landing Page",
+  "main": "index.js",
+  "author": "SocialSpace Inc.",
+  "license": "MIT",
+  "private": true
+}
