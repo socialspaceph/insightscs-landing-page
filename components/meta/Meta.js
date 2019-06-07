@@ -49,6 +49,10 @@ export default function Meta() {
         h6 {
           font-family: 'Poppins', sans-serif;
         }
+
+        p {
+          line-height: 1.5rem;
+        }
       `}</style>
     </React.Fragment>
   )
