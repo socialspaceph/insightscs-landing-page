@@ -1,5 +1,11 @@
 import React from 'react'
+import Meta from '../components/meta'
 
 export default function Home() {
-  return <h1>Hello world!</h1>
+  return (
+    <div>
+      <Meta />
+      Hello
+    </div>
+  )
 }
