@@ -2,13 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Meta from '../components/meta'
+import Footer from '../components/footer'
 
 export default function Page({ children }) {
   return (
     <React.Fragment>
       <Meta />
       {children}
-      some footer here
+      <Footer />
     </React.Fragment>
   )
 }

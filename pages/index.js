@@ -1,11 +1,6 @@
 import React from 'react'
-import Meta from '../components/meta'
+import { Page } from '../layouts'
 
 export default function Home() {
-  return (
-    <div>
-      <Meta />
-      Hello
-    </div>
-  )
+  return <div>Main page</div>
 }
