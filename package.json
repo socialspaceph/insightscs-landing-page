@@ -5,5 +5,15 @@
   "main": "index.js",
   "author": "SocialSpace Inc.",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
 }
