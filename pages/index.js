@@ -1,10 +1,12 @@
 import React from 'react'
+import Hero from '../components/hero'
 
 import { Headline, Container } from '../elements'
 
 export default function Home() {
   return (
     <Container>
+      <Hero />
       <div className="row">
         <Headline>Typography</Headline>
         <h1>Heading 1</h1>
