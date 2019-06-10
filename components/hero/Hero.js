@@ -1,14 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import website from '../../config/website'
 
 import HeroForm from './HeroForm'
 import SocialItem from '../socialItem'
+import { FacebookIcon } from '../../icons'
 
 export default function Hero({ theme }) {
   return (
     <header className="hero">
       <div className="left">
-        <SocialItem>a</SocialItem>
+        <div className="social-items">
+          {website.facebook && (
+            <div className="social-item-wrapper">
+              <SocialItem href={website.facebook}>
+                <FacebookIcon />
+              </SocialItem>
+            </div>
+          )}
+        </div>
         <h1 className="headline">
           Future-proof your supply chain operations today
         </h1>
@@ -27,6 +37,15 @@ export default function Hero({ theme }) {
           margin-top: 2rem;
           margin-bottom: 4rem;
         }
+
+        .social-items {
+          // display: flex;
+          margin-bottom: 1rem;
+        }
+
+        // .social-items .social-item-wrapper {
+        //   margin-right: 1rem;
+        // }
 
         .left {
           width: 100%;

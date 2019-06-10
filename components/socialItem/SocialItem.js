@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ThemeContext from '../../lib/ThemeContext'
 
-export default function SocialItem({ children, href }) {
+export default function SocialItem({ children, href, ...rest }) {
   const theme = React.useContext(ThemeContext)
 
   return (
@@ -21,8 +21,11 @@ export default function SocialItem({ children, href }) {
            justify-content: center;
            box-shadow: 0 5px 10px 1px rgba(205, 29, 29, .2);
            cursor: pointer;
+           padding: 7px;
            
            transition: all 200ms ease-in-out;
+
+           fill: ${theme.palette.primary};
           }
           
           .socialitem:hover {

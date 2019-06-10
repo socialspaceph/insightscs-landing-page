@@ -6,8 +6,13 @@ const meta = {
   siteAuthor: 'SocialSpace Inc.',
 }
 
+const social = {
+  facebook: 'https://www.facebook.com/',
+}
+
 const website = {
   ...meta,
+  ...social,
 }
 
 export default website
