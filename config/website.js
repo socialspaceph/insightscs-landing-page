@@ -7,7 +7,7 @@ const meta = {
 }
 
 const social = {
-  facebook: 'https://www.facebook.com/',
+  facebook: 'https://www.facebook.com/insightscs',
 }
 
 const website = {
