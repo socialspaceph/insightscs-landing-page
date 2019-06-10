@@ -45,7 +45,7 @@ export default function TextInputGroup({
           width: 100%;
           background: #fff;
           border-radius: 0.5rem;
-          font-size: 1.1rem;
+          font-size: 1rem;
           border: 1px solid #d1d1d1;
           padding: 0.75rem;
         }

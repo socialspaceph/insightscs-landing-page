@@ -1,24 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import * as Yup from 'yup'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { heroValidationSchema } from '../../lib/validationSchemas'
+import { Formik, Form, Field } from 'formik'
 
 import { TextInputGroup } from '../../elements'
 
-const testSchema = Yup.object().shape({
-  name: Yup.string().required(),
-})
-
 export default function HeroForm({ theme }) {
-  const handleSubmit = e => {
-    e.preventDefault()
-    console.log('HELLO')
-  }
-
   return (
     <div className="form__wrapper">
       <Formik
-        validationSchema={testSchema}
+        validationSchema={heroValidationSchema}
         initialValues={{
           name: '',
           email: '',
@@ -37,11 +28,22 @@ export default function HeroForm({ theme }) {
               required
               component={TextInputGroup}
             />
-            <ErrorMessage name="name" component="div" />
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="div" />
-            <Field type="number" name="contact" />
-            <ErrorMessage name="number" component="div" />
+            <Field
+              name="email"
+              id="email"
+              label="Email"
+              type="email"
+              required
+              component={TextInputGroup}
+            />
+            <Field
+              name="contact"
+              id="contact"
+              label="Contact Number"
+              type="number"
+              required
+              component={TextInputGroup}
+            />
             <button>Submit</button>
           </Form>
         )}
