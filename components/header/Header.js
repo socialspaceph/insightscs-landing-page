@@ -1,6 +1,6 @@
 import React from 'react'
-
 import ThemeContext from '../../lib/ThemeContext'
+
 import logo from './insightscs-logo.png'
 
 export default function Header() {
@@ -13,6 +13,8 @@ export default function Header() {
         {`
           .header {
             padding: 1rem;
+            max-width: 1600px;
+            margin: 0 auto;
           }
 
           @media (min-width: ${theme.breakpoints.md}) {
@@ -30,6 +32,12 @@ export default function Header() {
           @media (min-width: ${theme.breakpoints.xl}) {
             .header {
               padding: 1rem 4rem;
+            }
+          }
+
+          @media (min-width: ${theme.breakpoints.xxl}) {
+            .header {
+              padding: 1rem 6rem;
             }
           }
 
