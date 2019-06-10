@@ -1,9 +1,9 @@
 import React from 'react'
-import ThemeContext from '../../lib/ThemeContext'
+import PropTypes from 'prop-types'
 
-export default function Hero() {
-  const theme = React.useContext(ThemeContext)
+import HeroForm from './HeroForm'
 
+export default function Hero({ theme }) {
   return (
     <header className="hero">
       <div className="left">
@@ -17,7 +17,9 @@ export default function Hero() {
           point of delivery.
         </p>
       </div>
-      <div className="right">form</div>
+      <div className="right">
+        <HeroForm theme={theme} />
+      </div>
       <style jsx>{`
         .hero {
           margin-top: 2rem;
@@ -49,7 +51,6 @@ export default function Hero() {
           .right {
             max-width: 400px;
             flex-shrink: 0;
-            background: pink;
           }
         }
 
@@ -61,4 +62,8 @@ export default function Hero() {
       `}</style>
     </header>
   )
+}
+
+Hero.propTypes = {
+  theme: PropTypes.object.isRequired,
 }

@@ -13,10 +13,12 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "formik": "^1.5.7",
     "next": "^8.1.0",
     "next-images": "^1.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "yup": "^0.27.0"
   }
 }
