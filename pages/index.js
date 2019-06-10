@@ -7,7 +7,7 @@ export default function Home() {
     <div className="container">
       <div className="row">
         <Headline>Logo</Headline>
-        <img src="/static/img/insightscs-logo.png" alt="InsightSCS Logo" />
+        <img src="static/img/insightscs-logo.png" alt="InsightSCS Logo" />
       </div>
       <div className="row">
         <Headline>Typography</Headline>

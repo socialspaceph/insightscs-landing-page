@@ -16,5 +16,5 @@ export default function Headline({ children }) {
 }
 
 Headline.propTypes = {
-  children: PropTypes.oneOf([PropTypes.node, PropTypes.object]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.object]).isRequired,
 }
