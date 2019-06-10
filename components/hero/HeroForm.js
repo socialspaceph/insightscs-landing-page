@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { heroValidationSchema } from '../../lib/validationSchemas'
 import { Formik, Form, Field } from 'formik'
 
-import { TextInputGroup } from '../../elements'
+import { Button, TextInputGroup } from '../../elements'
 
 export default function HeroForm({ theme }) {
   return (
@@ -44,7 +44,9 @@ export default function HeroForm({ theme }) {
               required
               component={TextInputGroup}
             />
-            <button>Submit</button>
+            <Button variant="primary" block>
+              Submit
+            </Button>
           </Form>
         )}
       </Formik>
