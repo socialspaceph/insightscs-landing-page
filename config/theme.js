@@ -2,6 +2,7 @@ const theme = {
   palette: {
     primary: '#b71a1a',
     gray: '#F2F2F2',
+    darkgray: '#d1d1d1',
     white: '#FFF',
   },
 
