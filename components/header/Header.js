@@ -1,18 +1,40 @@
 import React from 'react'
 
+import ThemeContext from '../../lib/ThemeContext'
+import logo from './insightscs-logo.png'
+
 export default function Header() {
+  const theme = React.useContext(ThemeContext)
+
   return (
     <header className="header">
-      <span>InsightSCS Landing Page Styleguide</span>
+      <img className="logo" src={logo} alt="InsightSCS Logo" />
       <style jsx>
         {`
           .header {
-            text-transform: uppercase;
-            letter-spacing: 0.1rem;
-            opacity: 0.5;
-            font-weight: 600;
-            text-align: center;
-            padding: 2rem 0;
+            padding: 1rem;
+          }
+
+          @media (min-width: ${theme.breakpoints.md}) {
+            .header {
+              padding: 1rem 2rem;
+            }
+          }
+
+          @media (min-width: ${theme.breakpoints.lg}) {
+            .header {
+              padding: 1rem 2rem;
+            }
+          }
+
+          @media (min-width: ${theme.breakpoints.xl}) {
+            .header {
+              padding: 1rem 4rem;
+            }
+          }
+
+          .logo {
+            max-width: 200px;
           }
         `}
       </style>

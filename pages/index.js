@@ -1,14 +1,10 @@
 import React from 'react'
 
-import { Headline } from '../elements'
+import { Headline, Container } from '../elements'
 
 export default function Home() {
   return (
-    <div className="container">
-      <div className="row">
-        <Headline>Logo</Headline>
-        <img src="static/img/insightscs-logo.png" alt="InsightSCS Logo" />
-      </div>
+    <Container>
       <div className="row">
         <Headline>Typography</Headline>
         <h1>Heading 1</h1>
@@ -64,11 +60,6 @@ export default function Home() {
       </div>
       <style jsx>
         {`
-          .container {
-            max-width: 600px;
-            margin: 0 auto;
-          }
-
           .row {
             margin-bottom: 3rem;
           }
@@ -78,6 +69,6 @@ export default function Home() {
           }
         `}
       </style>
-    </div>
+    </Container>
   )
 }
