@@ -2,11 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import HeroForm from './HeroForm'
+import SocialItem from '../socialItem'
 
 export default function Hero({ theme }) {
   return (
     <header className="hero">
       <div className="left">
+        <SocialItem>a</SocialItem>
         <h1 className="headline">
           Future-proof your supply chain operations today
         </h1>
