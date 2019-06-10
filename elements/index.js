@@ -1,3 +1,4 @@
 import Headline from './Headline'
+import Container from './Container'
 
-export { Headline }
+export { Headline, Container }
