@@ -57,6 +57,7 @@ export default function HeroForm({ theme }) {
             box-shadow: 0 30px 60px 1px rgba(0, 0, 0, 0.15);
             border-radius: 15px;
             padding: 1rem;
+            background: ${theme.palette.white};
           }
 
           @media (min-width: ${theme.breakpoints.md}) {

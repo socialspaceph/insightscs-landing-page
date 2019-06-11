@@ -7,7 +7,7 @@ export default function Section({ children }) {
       {children}
       <style jsx>
         {`
-          margin: 4rem 0;
+          padding: 4rem 0;
         `}
       </style>
     </div>

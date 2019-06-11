@@ -70,8 +70,10 @@ export default function Hero({ theme }) {
           }
 
           .right {
+            width: 100%;
             max-width: 400px;
-            flex-shrink: 0;
+            min-width: 250px;
+            // flex-shrink: 0;
           }
         }
 

@@ -48,6 +48,18 @@ export default function TextInputGroup({
           font-size: 1rem;
           border: 1px solid #d1d1d1;
           padding: 0.75rem;
+          outline: none;
+          transition: all 200ms ease-in-out;
+
+          ${touched[name] &&
+            errors[name] &&
+            `border: 1px solid red;
+          box-shadow: 0 0 1px 1px red;`}
+        }
+
+        input:focus {
+          border: 1px solid #999;
+          ${touched[name] && errors[name] && `border: 1px solid red;`}
         }
       `}</style>
     </div>

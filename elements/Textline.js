@@ -2,28 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ThemeContext from '../lib/ThemeContext'
 
-export default function Headline({ children, centered }) {
+export default function Textline({ children, centered }) {
   const theme = React.useContext(ThemeContext)
   return (
-    <h2>
+    <p>
       {children}
       <style jsx>{`
-        font-size: 2rem;
+        width: 100%;
+        text-align: center;
         margin: 0;
 
         @media (min-width: ${theme.breakpoints.lg}) {
-          font-size: 3rem;
+          max-width: 600px;
+          margin: 0 auto;
         }
-
-        ${centered &&
-          `
-          text-align: center;
-        `}
       `}</style>
-    </h2>
+    </p>
   )
 }
 
-Headline.propTypes = {
+Textline.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.object]).isRequired,
 }
