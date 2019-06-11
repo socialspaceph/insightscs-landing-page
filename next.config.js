@@ -1,5 +1,3 @@
-const withImages = require('next-images')
-
 module.exports = {
   assetPrefix: './',
   exportPathMap: async function(defaultPathMap) {
@@ -8,5 +6,3 @@ module.exports = {
     }
   },
 }
-
-module.exports = withImages()

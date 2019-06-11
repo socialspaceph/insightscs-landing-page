@@ -2,8 +2,6 @@ import React from 'react'
 import { Container } from '../../elements'
 import ThemeContext from '../../lib/ThemeContext'
 
-import logo from './insightscs-logo-white.png'
-
 export default function Footer() {
   const theme = React.useContext(ThemeContext)
 
@@ -12,7 +10,10 @@ export default function Footer() {
       <Container>
         <div className="footer__wrapper">
           <div className="footer__logo">
-            <img src={logo} alt="InsightSCS Logo White" />
+            <img
+              src="./static/img/insightscs-logo-white.png"
+              alt="InsightSCS Logo White"
+            />
           </div>
           <strong>HEADQUARTERS</strong>
           <p style={{ marginTop: '0' }}>

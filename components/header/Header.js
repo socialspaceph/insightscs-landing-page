@@ -1,13 +1,15 @@
 import React from 'react'
 import { Container } from '../../elements'
 
-import logo from './insightscs-logo.png'
-
 export default function Header() {
   return (
     <header>
       <Container>
-        <img className="logo" src={logo} alt="InsightSCS Logo" />
+        <img
+          className="logo"
+          src="./static/img/insightscs-logo.png"
+          alt="InsightSCS Logo"
+        />
       </Container>
       <style jsx>
         {`
