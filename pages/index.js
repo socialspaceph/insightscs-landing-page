@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, animateScroll as scroll } from 'react-scroll'
 import Hero from '../components/hero'
 import Cta from '../components/cta'
 import ThemeContext from '../lib/ThemeContext'
@@ -141,12 +142,14 @@ export default function Home() {
                 Doloribus quam dolore quod inventore non soluta incidunt
                 distinctio totam eos! Beatae!
               </p>
-              <a className="cta-button" href="#">
-                Start Now{' '}
+              <div className="cta-button" href="#">
+                <Link to="section1" spy={true} smooth={true} duration={1000}>
+                  Start Now
+                </Link>
                 <span>
                   <ChevronRight />
                 </span>
-              </a>
+              </div>
             </div>
             <div className="right">
               <img
@@ -168,6 +171,8 @@ export default function Home() {
                   text-transform: uppercase;
                   font-weight: bold;
                   position: relative;
+                  display: inline-block;
+                  cursor: pointer;
                 }
 
                 .cta-button span {

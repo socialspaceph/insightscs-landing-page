@@ -7,7 +7,7 @@ import { Button, TextInputGroup } from '../../elements'
 
 export default function HeroForm({ theme }) {
   return (
-    <div className="form__wrapper">
+    <div className="form__wrapper" id="section1">
       <Formik
         validationSchema={heroValidationSchema}
         initialValues={{
