@@ -53,6 +53,11 @@ export default function Meta() {
         p {
           line-height: 1.5rem;
         }
+
+        img {
+          display: block;
+          width: 100%;
+        }
       `}</style>
     </React.Fragment>
   )
