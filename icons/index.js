@@ -1,3 +1,4 @@
 import FacebookIcon from './FacebookIcon'
+import ChevronRight from './ChevronRight'
 
-export { FacebookIcon }
+export { FacebookIcon, ChevronRight }

@@ -1,23 +1,22 @@
 import React from 'react'
-import { Container } from '../../elements'
+import css from 'styled-jsx/css'
+import { Image, Container } from '../../elements'
+
+const { className, styles } = css.resolve`
+    max-width: 200px;
+`
 
 export default function Header() {
   return (
     <header>
       <Container>
-        <img
-          className="logo"
-          src="./static/img/insightscs-logo.png"
+        <Image
+          className={className}
+          src="/static/img/insightscs-logo.png"
           alt="InsightSCS Logo"
         />
+        {styles}
       </Container>
-      <style jsx>
-        {`
-          .logo {
-            max-width: 200px;
-          }
-        `}
-      </style>
     </header>
   )
 }

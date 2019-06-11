@@ -3,6 +3,7 @@ import Hero from '../components/hero'
 import ThemeContext from '../lib/ThemeContext'
 
 import { Headline, Textline, Container, Section } from '../elements'
+import { ChevronRight } from '../icons'
 
 export default function Home() {
   const theme = React.useContext(ThemeContext)
@@ -130,7 +131,82 @@ export default function Home() {
         </style>
       </div>
       <Container>
-        <Section>image area</Section>
+        <Section>
+          <div className="image-section">
+            <div className="left">
+              <Headline>Subtitle</Headline>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloribus quam dolore quod inventore non soluta incidunt
+                distinctio totam eos! Beatae!
+              </p>
+              <a className="cta-button" href="#">
+                Start Now{' '}
+                <span>
+                  <ChevronRight />
+                </span>
+              </a>
+            </div>
+            <div className="right">
+              <img
+                src="https://via.placeholder.com/800x400?text=InsightSCS"
+                alt=""
+              />
+            </div>
+            <style jsx>
+              {`
+                .image-section {
+                  display: flex;
+                  flex-direction: column;
+                }
+
+                .cta-button {
+                  color: ${theme.palette.primary};
+                  letter-spacing: 1px;
+                  text-decoration: none;
+                  text-transform: uppercase;
+                  font-weight: bold;
+                  position: relative;
+                }
+
+                .cta-button span {
+                  display: inline-block;
+                  width: 18px;
+                  height: 18px;
+                  position: absolute;
+                  top: 50%;
+                  right: -1rem;
+                  transform: translate(0, -50%);
+                  fill: ${theme.palette.primary};
+                  transition: all 200ms ease-in-out;
+                }
+
+                .cta-button:hover span {
+                  transform: translate(5px, -50%);
+                }
+
+                .left {
+                  margin-bottom: 2rem;
+                }
+
+                @media (min-width: ${theme.breakpoints.md}) {
+                  .image-section {
+                    flex-direction: row;
+                  }
+
+                  .left {
+                    width: 40%;
+                    padding-right: 2rem;
+                  }
+
+                  .right {
+                    width: 60%;
+                  }
+                }
+              `}
+            </style>
+          </div>
+        </Section>
         <Section>cta</Section>
       </Container>
     </React.Fragment>

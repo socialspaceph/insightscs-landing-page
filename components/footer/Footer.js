@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="footer__wrapper">
           <div className="footer__logo">
             <img
-              src="./static/img/insightscs-logo-white.png"
+              src="/static/img/insightscs-logo-white.png"
               alt="InsightSCS Logo White"
             />
           </div>
