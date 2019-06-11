@@ -2,7 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ThemeContext from '../lib/ThemeContext'
 
-export default function Button({ children, variant, notrounded, block }) {
+export default function Button({
+  children,
+  variant,
+  notrounded,
+  block,
+  ...rest
+}) {
   const theme = React.useContext(ThemeContext)
 
   const getButtonVariant = variant => {
@@ -19,12 +25,12 @@ export default function Button({ children, variant, notrounded, block }) {
   }
 
   return (
-    <button className={getButtonVariant(variant).join(' ')}>
+    <button {...rest} className={getButtonVariant(variant).join(' ')}>
       {children}
       <style jsx>
         {`
           .button {
-            padding: 0.75rem;
+            padding: 0.75rem 1.5rem;
             border: none;
             border-radius: ${!notrounded ? '2rem' : '0'};
             cursor: pointer;

@@ -1,5 +1,6 @@
 import React from 'react'
 import Hero from '../components/hero'
+import Cta from '../components/cta'
 import ThemeContext from '../lib/ThemeContext'
 
 import { Headline, Textline, Container, Section } from '../elements'
@@ -207,7 +208,9 @@ export default function Home() {
             </style>
           </div>
         </Section>
-        <Section>cta</Section>
+        <Section>
+          <Cta />
+        </Section>
       </Container>
     </React.Fragment>
   )
