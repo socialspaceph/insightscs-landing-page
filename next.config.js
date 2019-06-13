@@ -1,4 +1,4 @@
-const PRODUCTION_URL = 'https://philippines-insightscs.netlify.com/'
+const PRODUCTION_URL = 'http://philippines.insightscs.com/'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
