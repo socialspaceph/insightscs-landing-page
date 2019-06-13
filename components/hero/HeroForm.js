@@ -5,6 +5,8 @@ import { Formik, Form, Field } from 'formik'
 
 import { Button, TextInputGroup } from '../../elements'
 
+import * as gtag from '../../lib/gtag'
+
 export default function HeroForm({ theme }) {
   return (
     <div className="form__wrapper" id="section1">
@@ -17,6 +19,13 @@ export default function HeroForm({ theme }) {
         }}
         onSubmit={values => {
           console.log(values)
+
+          // Send gtag event
+          gtag.event({
+            action: 'submit_form',
+            category: 'Hero',
+            label: values.email,
+          })
         }}
       >
         {() => (

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, animateScroll as scroll } from 'react-scroll'
+import { Link as ScrollLink } from 'react-scroll'
 import Hero from '../components/hero'
 import Cta from '../components/cta'
 import ThemeContext from '../lib/ThemeContext'
@@ -143,9 +143,14 @@ export default function Home() {
                 distinctio totam eos! Beatae!
               </p>
               <div className="cta-button" href="#">
-                <Link to="section1" spy={true} smooth={true} duration={1000}>
+                <ScrollLink
+                  to="section1"
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                >
                   Start Now
-                </Link>
+                </ScrollLink>
                 <span>
                   <ChevronRight />
                 </span>
