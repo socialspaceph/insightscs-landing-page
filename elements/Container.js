@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import ThemeContext from '../lib/ThemeContext'
+import React from "react";
+import PropTypes from "prop-types";
+import ThemeContext from "../lib/ThemeContext";
 
-export default function Container({ children }) {
-  const theme = React.useContext(ThemeContext)
+export default function Container({ children, ...props }) {
+  const theme = React.useContext(ThemeContext);
 
   return (
-    <div>
+    <div {...props}>
       {children}
       <style jsx>{`
         padding: 1rem;
@@ -30,9 +30,9 @@ export default function Container({ children }) {
         }
       `}</style>
     </div>
-  )
+  );
 }
 
 Container.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.object]).isRequired,
-}
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.object]).isRequired
+};

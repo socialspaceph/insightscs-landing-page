@@ -1,71 +1,111 @@
-import React from 'react'
-import { Link as ScrollLink } from 'react-scroll'
-import Hero from '../components/hero'
-import Cta from '../components/cta'
-import ThemeContext from '../lib/ThemeContext'
+import React from "react";
+import { Link as ScrollLink } from "react-scroll";
+import getConfig from "next-server/config";
+import Hero from "../components/hero";
+import Cta from "../components/cta";
+import ThemeContext from "../lib/ThemeContext";
 
-import { Headline, Textline, Container, Section } from '../elements'
-import { ChevronRight } from '../icons'
+import { Headline, Textline, Container, Section } from "../elements";
+import {
+  ChevronRight,
+  Shippers,
+  Consignees,
+  Transporters,
+  Financers
+} from "../icons";
+
+const { publicRuntimeConfig } = getConfig();
+const linkPrefix = publicRuntimeConfig.linkPrefix;
 
 export default function Home() {
-  const theme = React.useContext(ThemeContext)
+  const theme = React.useContext(ThemeContext);
 
   return (
     <React.Fragment>
       <Container>
+        <div className="bg" />
         <Hero theme={theme} />
+        <style jsx>
+          {`
+            .bg {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0%;
+              height: 100%;
+              background: url("${linkPrefix}static/img/bg.jpg") center bottom no-repeat;
+              background-size: cover;
+              z-index: -1;
+            }
+          `}
+        </style>
       </Container>
       <div className="benefit-section">
         <div className="graybg" />
         <Section>
           <Container>
-            <Headline centered>Subtitle</Headline>
-            <Textline>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde
-              illum esse voluptatem? Nulla error perferendis fugiat dicta
-              similique repudiandae cum?
-            </Textline>
+            <Headline centered variant="small">
+              All-in-one logistics and
+              <br />
+              financing para sa negosyo mo
+            </Headline>
             <div className="benefits-container">
               <div className="benefits__item">
-                <img
-                  src="https://via.placeholder.com/350x225?text=InsightSCS"
-                  alt="placeholder"
-                />
                 <div className="content">
-                  <h3>Benefit 1</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Fugit maxime recusandae nam eius magni, praesentium quod ab!
-                    Aspernatur, consequuntur sint!
-                  </p>
+                  <div className="left">
+                    <Shippers style={{ width: "60px", height: "60px" }} />
+                  </div>
+                  <div className="right">
+                    <h3>Shippers</h3>
+                    <p>
+                      Increase transparency of price, shipment events, and
+                      ownership of the entire shipment process.
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="benefits__item">
-                <img
-                  src="https://via.placeholder.com/350x225?text=InsightSCS"
-                  alt="placeholder"
-                />
                 <div className="content">
-                  <h3>Benefit 2</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Fugit maxime recusandae nam eius magni, praesentium quod ab!
-                    Aspernatur, consequuntur sint!
-                  </p>
+                  <div className="left">
+                    <Consignees style={{ width: "60px", height: "60px" }} />
+                  </div>
+                  <div className="right">
+                    <h3>Consignees</h3>
+                    <p>
+                      Benefit from reduced documentation and compliance costs
+                      while increasing traceabiity.
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="benefits__item">
-                <img
-                  src="https://via.placeholder.com/350x225?text=InsightSCS"
-                  alt="placeholder"
-                />
                 <div className="content">
-                  <h3>Benefit 3</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Fugit maxime recusandae nam eius magni, praesentium quod ab!
-                    Aspernatur, consequuntur sint!
-                  </p>
+                  <div className="left">
+                    <Transporters style={{ width: "60px", height: "60px" }} />
+                  </div>
+                  <div className="right">
+                    <h3>Transporters</h3>
+                    <p>
+                      Accelerate payments and simplify claims settlement with
+                      enterprise-grade software.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="benefits__item">
+                <div className="content">
+                  <div className="left">
+                    <Financers style={{ width: "60px", height: "60px" }} />
+                  </div>
+                  <div className="right">
+                    <h3>Financers</h3>
+                    <p>
+                      Get unprecedented visibility to order data and related
+                      records to reduce cost and risk.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -86,9 +126,9 @@ export default function Home() {
               bottom: 0;
               width: 100%;
               display: block;
-              content: '';
+              content: "";
               z-index: -1;
-              background: ${theme.palette.gray};
+              background: ${theme.palette.white};
               border-top-left-radius: 4rem;
               border-top-right-radius: 4rem;
             }
@@ -106,6 +146,18 @@ export default function Home() {
               margin-bottom: 2rem;
             }
 
+            .benefits__item .content {
+              display: flex;
+            }
+
+            .benefits__item .content .right {
+              padding-left: 1rem;
+            }
+
+            .benefits__item .content h3 {
+              margin-top: 0;
+            }
+
             .benefits__item > img {
               display: block;
               width: 100%;
@@ -117,22 +169,23 @@ export default function Home() {
               }
 
               .benefits__item {
+                max-width: 400px;
                 width: 48%;
                 padding: 1rem;
                 margin: 1%;
               }
             }
 
-            @media (min-width: ${theme.breakpoints.lg}) {
-              .benefits__item {
-                width: 31.33%;
-                margin: 1%;
-              }
-            }
+            // @media (min-width: ${theme.breakpoints.lg}) {
+            //   .benefits__item {
+            //     width: 31.33%;
+            //     margin: 1%;
+            //   }
+            // }
           `}
         </style>
       </div>
-      <Container>
+      <Container style={{ background: "#FFF" }}>
         <Section>
           <div className="image-section">
             <div className="left">
@@ -223,5 +276,5 @@ export default function Home() {
         </Section>
       </Container>
     </React.Fragment>
-  )
+  );
 }

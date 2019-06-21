@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { heroValidationSchema } from '../../lib/validationSchemas'
-import { Formik, Form, Field } from 'formik'
+import React from "react";
+import PropTypes from "prop-types";
+import { heroValidationSchema } from "../../lib/validationSchemas";
+import { Formik, Form, Field } from "formik";
 
-import { Button, TextInputGroup } from '../../elements'
+import { Button, TextInputGroup } from "../../elements";
 
-import * as gtag from '../../lib/gtag'
+import * as gtag from "../../lib/gtag";
 
 export default function HeroForm({ theme }) {
   return (
@@ -13,19 +13,20 @@ export default function HeroForm({ theme }) {
       <Formik
         validationSchema={heroValidationSchema}
         initialValues={{
-          name: '',
-          email: '',
-          contact: '',
+          name: "",
+          email: "",
+          contact: "",
+          no_of_trucks: ""
         }}
         onSubmit={values => {
-          console.log(values)
+          console.log(values);
 
           // Send gtag event
           gtag.event({
-            action: 'submit_form',
-            category: 'Hero',
-            label: values.email,
-          })
+            action: "submit_form",
+            category: "Hero",
+            label: values.email
+          });
         }}
       >
         {() => (
@@ -49,6 +50,14 @@ export default function HeroForm({ theme }) {
               name="contact"
               id="contact"
               label="Contact Number"
+              type="number"
+              required
+              component={TextInputGroup}
+            />
+            <Field
+              name="no_of_trucks"
+              id="no_of_trucks"
+              label="How many trucks?"
               type="number"
               required
               component={TextInputGroup}
@@ -77,9 +86,9 @@ export default function HeroForm({ theme }) {
         `}
       </style>
     </div>
-  )
+  );
 }
 
 HeroForm.propTypes = {
-  theme: PropTypes.object.isRequired,
-}
+  theme: PropTypes.object.isRequired
+};

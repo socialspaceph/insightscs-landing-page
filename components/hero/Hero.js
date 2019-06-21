@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import website from '../../config/website'
+import React from "react";
+import PropTypes from "prop-types";
+import website from "../../config/website";
 
-import HeroForm from './HeroForm'
-import SocialItem from '../socialItem'
-import { FacebookIcon } from '../../icons'
+import HeroForm from "./HeroForm";
+import SocialItem from "../socialItem";
+import { FacebookIcon } from "../../icons";
 
 export default function Hero({ theme }) {
   return (
@@ -19,14 +19,10 @@ export default function Hero({ theme }) {
             </div>
           )}
         </div>
-        <h1 className="headline">
-          Future-proof your supply chain operations today
-        </h1>
+        <h1 className="headline">Sa InsightSCS, tuluy-tuloy ang negosyo mo.</h1>
         <p>
-          Establish next-gen logistics networks with technology driven
-          collaboration and efficiency that provides a direct data relationship
-          with carriers through an unbroken chain of custody right up to the
-          point of delivery.
+          Maximize your trucking and shipping business with shorter payouts and
+          end-to-end visibility with InsightSCS
         </p>
       </div>
       <div className="right">
@@ -49,6 +45,7 @@ export default function Hero({ theme }) {
 
         .left {
           width: 100%;
+          color: #fff;
         }
 
         .right {
@@ -78,15 +75,20 @@ export default function Hero({ theme }) {
         }
 
         @media (min-width: ${theme.breakpoints.lg}) {
+          .left {
+            width: 50%;
+          }
+
           .right {
             max-width: 500px;
+            margin-left: auto;
           }
         }
       `}</style>
     </header>
-  )
+  );
 }
 
 Hero.propTypes = {
-  theme: PropTypes.object.isRequired,
-}
+  theme: PropTypes.object.isRequired
+};

@@ -1,18 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import ThemeContext from '../lib/ThemeContext'
+import React from "react";
+import PropTypes from "prop-types";
+import ThemeContext from "../lib/ThemeContext";
 
-export default function Headline({ children, centered }) {
-  const theme = React.useContext(ThemeContext)
+export default function Headline({ children, centered, variant, ...props }) {
+  const theme = React.useContext(ThemeContext);
   return (
-    <h2>
+    <h2 {...props}>
       {children}
       <style jsx>{`
-        font-size: 2rem;
+        font-size: ${variant === "small" ? "1.5rem" : "2rem"};
         margin: 0;
 
         @media (min-width: ${theme.breakpoints.lg}) {
-          font-size: 3rem;
+          font-size: ${variant === "small" ? "2.2rem" : "3rem"};
         }
 
         ${centered &&
@@ -21,9 +21,9 @@ export default function Headline({ children, centered }) {
         `}
       `}</style>
     </h2>
-  )
+  );
 }
 
 Headline.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.object]).isRequired,
-}
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.object]).isRequired
+};

@@ -1,15 +1,15 @@
-import React from 'react'
-import Link from 'next/link'
-import css from 'styled-jsx/css'
-import { Image, Container } from '../../elements'
+import React from "react";
+import Link from "next/link";
+import css from "styled-jsx/css";
+import { Image, Container } from "../../elements";
 
 const { className, styles } = css.resolve`
-    max-width: 200px;
-`
+    max-width: 150px;
+`;
 
 export default function Header() {
   return (
-    <header>
+    <header style={{ backgroundColor: "#FFF" }}>
       <Container>
         <Link href="/">
           <a>
@@ -23,5 +23,5 @@ export default function Header() {
         {styles}
       </Container>
     </header>
-  )
+  );
 }
