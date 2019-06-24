@@ -1,10 +1,10 @@
-import React from 'react'
-import ThemeContext from '../../lib/ThemeContext'
-import { Headline, Textline, Button } from '../../elements'
-import { MessageBubble, Wave, Heart, Mail, Rotate } from '../../icons'
+import React from "react";
+import ThemeContext from "../../lib/ThemeContext";
+import { Headline, Textline, Button } from "../../elements";
+import { MessageBubble, Wave, Heart, Mail, Rotate } from "../../icons";
 
 export default function Cta() {
-  const theme = React.useContext(ThemeContext)
+  const theme = React.useContext(ThemeContext);
 
   return (
     <div className="cta-container">
@@ -29,15 +29,10 @@ export default function Cta() {
         </div>
       </div>
       <Headline centered>Ready to get started?</Headline>
-      <Textline>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
-        veritatis reiciendis quaerat asperiores eos expedita magni doloribus
-        aliquid corrupti. Unde.
-      </Textline>
       <Button
         className="button"
         variant="primary"
-        style={{ marginTop: '1rem' }}
+        style={{ marginTop: "1rem" }}
       >
         Button
       </Button>
@@ -47,6 +42,17 @@ export default function Cta() {
           position: relative;
           padding-bottom: 2rem;
         }
+
+        .icon-container {
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          pointer-events: none;
+        }
+
         .svg {
           width: 30px;
           position: absolute;
@@ -94,5 +100,5 @@ export default function Cta() {
         }
       `}</style>
     </div>
-  )
+  );
 }

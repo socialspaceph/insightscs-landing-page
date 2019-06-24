@@ -1,18 +1,11 @@
 import React from "react";
-import { Link as ScrollLink } from "react-scroll";
 import getConfig from "next-server/config";
 import Hero from "../components/hero";
 import Cta from "../components/cta";
 import ThemeContext from "../lib/ThemeContext";
 
-import { Headline, Textline, Container, Section } from "../elements";
-import {
-  ChevronRight,
-  Shippers,
-  Consignees,
-  Transporters,
-  Financers
-} from "../icons";
+import { Headline, Textline, Container, Section, Image } from "../elements";
+import { Shippers, Consignees, Transporters, Financers } from "../icons";
 
 const { publicRuntimeConfig } = getConfig();
 const linkPrefix = publicRuntimeConfig.linkPrefix;
@@ -21,7 +14,7 @@ export default function Home() {
   const theme = React.useContext(ThemeContext);
 
   return (
-    <React.Fragment>
+    <>
       <Container>
         <div className="bg" />
         <Hero theme={theme} />
@@ -39,80 +32,81 @@ export default function Home() {
               background-size: cover;
               z-index: -1;
             }
-          `}
+            `}
         </style>
       </Container>
-      <div className="benefit-section">
-        <div className="graybg" />
-        <Section>
-          <Container>
-            <Headline centered variant="small">
-              All-in-one logistics and
-              <br />
-              financing para sa negosyo mo
-            </Headline>
-            <div className="benefits-container">
-              <div className="benefits__item">
-                <div className="content">
-                  <div className="left">
-                    <Shippers style={{ width: "60px", height: "60px" }} />
+      <div style={{ backgroundColor: "#FFF" }}>
+        <div className="benefit-section">
+          <div className="graybg" />
+          <Section>
+            <Container>
+              <Headline centered variant="small">
+                All-in-one logistics and
+                <br />
+                financing para sa negosyo mo
+              </Headline>
+              <div className="benefits-container">
+                <div className="benefits__item">
+                  <div className="content">
+                    <div className="left">
+                      <Shippers style={{ width: "60px", height: "60px" }} />
+                    </div>
+                    <div className="right">
+                      <h3>Shippers</h3>
+                      <p>
+                        Increase transparency of price, shipment events, and
+                        ownership of the entire shipment process.
+                      </p>
+                    </div>
                   </div>
-                  <div className="right">
-                    <h3>Shippers</h3>
-                    <p>
-                      Increase transparency of price, shipment events, and
-                      ownership of the entire shipment process.
-                    </p>
+                </div>
+                <div className="benefits__item">
+                  <div className="content">
+                    <div className="left">
+                      <Consignees style={{ width: "60px", height: "60px" }} />
+                    </div>
+                    <div className="right">
+                      <h3>Consignees</h3>
+                      <p>
+                        Benefit from reduced documentation and compliance costs
+                        while increasing traceabiity.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="benefits__item">
+                  <div className="content">
+                    <div className="left">
+                      <Transporters style={{ width: "60px", height: "60px" }} />
+                    </div>
+                    <div className="right">
+                      <h3>Transporters</h3>
+                      <p>
+                        Accelerate payments and simplify claims settlement with
+                        enterprise-grade software.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="benefits__item">
+                  <div className="content">
+                    <div className="left">
+                      <Financers style={{ width: "60px", height: "60px" }} />
+                    </div>
+                    <div className="right">
+                      <h3>Financers</h3>
+                      <p>
+                        Get unprecedented visibility to order data and related
+                        records to reduce cost and risk.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="benefits__item">
-                <div className="content">
-                  <div className="left">
-                    <Consignees style={{ width: "60px", height: "60px" }} />
-                  </div>
-                  <div className="right">
-                    <h3>Consignees</h3>
-                    <p>
-                      Benefit from reduced documentation and compliance costs
-                      while increasing traceabiity.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="benefits__item">
-                <div className="content">
-                  <div className="left">
-                    <Transporters style={{ width: "60px", height: "60px" }} />
-                  </div>
-                  <div className="right">
-                    <h3>Transporters</h3>
-                    <p>
-                      Accelerate payments and simplify claims settlement with
-                      enterprise-grade software.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="benefits__item">
-                <div className="content">
-                  <div className="left">
-                    <Financers style={{ width: "60px", height: "60px" }} />
-                  </div>
-                  <div className="right">
-                    <h3>Financers</h3>
-                    <p>
-                      Get unprecedented visibility to order data and related
-                      records to reduce cost and risk.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </Section>
-        <style jsx>
-          {`
+            </Container>
+          </Section>
+          <style jsx>
+            {`
             .benefit-section {
               position: relative;
               margin-top: -100px;
@@ -183,17 +177,74 @@ export default function Home() {
             //   }
             // }
           `}
-        </style>
-      </div>
-      <Container style={{ background: "#FFF" }}>
-        <Section>
+          </style>
+        </div>
+        <div style={{ backgroundColor: "#f1f1f1" }}>
+          <Container>
+            <Section>
+              <Headline centered variant="small">
+                Pag Manu-Mano ang Pag-Monitor,
+                <br />
+                Matagal ang Bayaran
+              </Headline>
+              <Textline>
+                Traditional logistics management usually causes goods or
+                services to be paid in months.
+              </Textline>
+              <div
+                className="svg-illust"
+                style={{ margin: "2rem auto", maxWidth: "1100px" }}
+              >
+                <div className="web-view">
+                  <Image src="/static/img/illust1.svg" />
+                </div>
+                <div className="mobile-view">
+                  <Image
+                    className="mobile-view"
+                    src="/static/img/illust1-mobile.svg"
+                  />
+                </div>
+                <style jsx>
+                  {`
+                    .web-view {
+                      display: none;
+                    }
+
+                    @media (min-width: 800px) {
+                      .web-view {
+                        display: block;
+                      }
+                      .mobile-view {
+                        display: none;
+                      }
+                    }
+                  `}
+                </style>
+              </div>
+            </Section>
+          </Container>
+        </div>
+        <Container>
+          <Section>
+            <Headline centered variant="small">
+              Sa InsightSCS, mababayaran ka
+              <br />
+              sa loob ng 5 - 10 na araw
+            </Headline>
+            <Textline>
+              Eliminate non-essential costs and speed up payments through
+              blockchain-enabled processes
+            </Textline>
+          </Section>
+          {/* <Section>
           <div className="image-section">
             <div className="left">
-              <Headline>Subtitle</Headline>
+              <Headline variant="small">
+                Pag Manu-Mano ang Pag-Monitor, Matagal ang Bayaran
+              </Headline>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Doloribus quam dolore quod inventore non soluta incidunt
-                distinctio totam eos! Beatae!
+                Traditional logistics management usually causes goods or
+                services to be paid in months.
               </p>
               <div className="cta-button" href="#">
                 <ScrollLink
@@ -270,11 +321,12 @@ export default function Home() {
               `}
             </style>
           </div>
-        </Section>
-        <Section>
-          <Cta />
-        </Section>
-      </Container>
-    </React.Fragment>
+        </Section> */}
+          <Section>
+            <Cta />
+          </Section>
+        </Container>
+      </div>
+    </>
   );
 }

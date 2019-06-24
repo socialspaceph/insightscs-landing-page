@@ -9,7 +9,7 @@ export default function Headline({ children, centered, variant, ...props }) {
       {children}
       <style jsx>{`
         font-size: ${variant === "small" ? "1.5rem" : "2rem"};
-        margin: 0;
+        margin: 0 0 1rem;
 
         @media (min-width: ${theme.breakpoints.lg}) {
           font-size: ${variant === "small" ? "2.2rem" : "3rem"};
