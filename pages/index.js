@@ -193,7 +193,7 @@ export default function Home() {
               </Textline>
               <div
                 className="svg-illust"
-                style={{ margin: "2rem auto", maxWidth: "1100px" }}
+                style={{ margin: "1rem auto", maxWidth: "1100px" }}
               >
                 <div className="web-view">
                   <Image src="/static/img/illust1.svg" />
@@ -235,6 +235,36 @@ export default function Home() {
               Eliminate non-essential costs and speed up payments through
               blockchain-enabled processes
             </Textline>
+            <div
+              className="svg-illust"
+              style={{ margin: "1rem auto", maxWidth: "1100px" }}
+            >
+              <div className="web-view">
+                <Image src="/static/img/illust2.svg" />
+              </div>
+              <div className="mobile-view">
+                <Image
+                  className="mobile-view"
+                  src="/static/img/illust2-mobile.svg"
+                />
+              </div>
+              <style jsx>
+                {`
+                  .web-view {
+                    display: none;
+                  }
+
+                  @media (min-width: 800px) {
+                    .web-view {
+                      display: block;
+                    }
+                    .mobile-view {
+                      display: none;
+                    }
+                  }
+                `}
+              </style>
+            </div>
           </Section>
           {/* <Section>
           <div className="image-section">

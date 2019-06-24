@@ -1,6 +1,7 @@
 import React from "react";
 import ThemeContext from "../../lib/ThemeContext";
-import { Headline, Textline, Button } from "../../elements";
+import { Link } from "react-scroll";
+import { Headline, Button } from "../../elements";
 import { MessageBubble, Wave, Heart, Mail, Rotate } from "../../icons";
 
 export default function Cta() {
@@ -29,13 +30,15 @@ export default function Cta() {
         </div>
       </div>
       <Headline centered>Ready to get started?</Headline>
-      <Button
-        className="button"
-        variant="primary"
-        style={{ marginTop: "1rem" }}
-      >
-        Button
-      </Button>
+      <Link to="section1" spy={true} smooth={true} duration={1000}>
+        <Button
+          className="button"
+          variant="primary"
+          style={{ marginTop: "1rem" }}
+        >
+          Start Now
+        </Button>
+      </Link>
       <style jsx>{`
         .cta-container {
           text-align: center;
