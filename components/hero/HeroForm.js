@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { heroValidationSchema } from "../../lib/validationSchemas";
+import { formSubmission } from "../../lib/formSubmission";
 import { Formik, Form, Field } from "formik";
 
 import HeroSubmit from "./HeroSubmit";
@@ -20,14 +21,19 @@ export default function HeroForm({ theme }) {
           contact: "",
           no_of_trucks: ""
         }}
-        onSubmit={(values, { setStatus }) => {
+        onSubmit={(values, { setStatus, resetForm }) => {
           // Set form to submitting
           setStatus({ submitting: true, success: false });
 
-          setTimeout(() => {
-            console.log(values);
-            setStatus({ submitting: false, success: true });
-          }, 2000);
+          formSubmission(values)
+            .then(() => {
+              resetForm();
+              setStatus({ submitting: false, success: true });
+            })
+            .catch(err => {
+              console.log(err);
+              resetForm();
+            });
           // Send gtag event
           // gtag.event({
           //   action: "submit_form",

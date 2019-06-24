@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
-import ErrorMessage from './ErrorMessage'
+import ErrorMessage from "./ErrorMessage";
 
 export default function TextInputGroup({
   field: { name, value, onChange, onBlur },
@@ -17,7 +17,7 @@ export default function TextInputGroup({
     <div className="input-wrapper">
       <label className="input-label" htmlFor={id}>
         {label}
-        {required && <span style={{ color: 'red' }}>*</span>}
+        {required && <span style={{ color: "red" }}>*</span>}
       </label>
       <input
         type={type}
@@ -63,29 +63,29 @@ export default function TextInputGroup({
         }
       `}</style>
     </div>
-  )
+  );
 }
 
 TextInputGroup.propTypes = {
   field: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     onChange: PropTypes.func.isRequired,
-    onBlur: PropTypes.func.isRequired,
+    onBlur: PropTypes.func.isRequired
   }).isRequired,
   form: PropTypes.shape({
     touched: PropTypes.object.isRequired,
-    errors: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired
   }).isRequired,
   type: PropTypes.string,
   placeholder: PropTypes.string,
   label: PropTypes.string.isRequired,
   required: PropTypes.bool,
-  id: PropTypes.string.isRequired,
-}
+  id: PropTypes.string.isRequired
+};
 
 TextInputGroup.defaultProps = {
-  type: 'text',
-  placeholder: '',
-  required: false,
-}
+  type: "text",
+  placeholder: "",
+  required: false
+};

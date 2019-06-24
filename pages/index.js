@@ -41,9 +41,7 @@ export default function Home() {
           <Section>
             <Container>
               <Headline centered variant="small">
-                All-in-one logistics and
-                <br />
-                financing para sa negosyo mo
+                All-in-one Logistics and Financing Para sa Negosyo Mo
               </Headline>
               <div className="benefits-container">
                 <div className="benefits__item">
@@ -69,7 +67,7 @@ export default function Home() {
                       <h3>Consignees</h3>
                       <p>
                         Benefit from reduced documentation and compliance costs
-                        while increasing traceabiity.
+                        while increasing traceability.
                       </p>
                     </div>
                   </div>
@@ -182,10 +180,97 @@ export default function Home() {
         <div style={{ backgroundColor: "#f1f1f1" }}>
           <Container>
             <Section>
+              <div className="image-section">
+                <div className="left">
+                  <Headline variant="small">
+                    Traditional logistics management usually causes goods or
+                    services to be paid in 100+ days
+                  </Headline>
+                  {/* <p>
+                    Traditional logistics management usually causes goods or
+                    services to be paid in months.
+                  </p> */}
+                  {/* <div className="cta-button" href="#">
+                  <ScrollLink
+                    to="section1"
+                    spy={true}
+                    smooth={true}
+                    duration={1000}
+                  >
+                    Start Now
+                  </ScrollLink>
+                  <span>
+                    <ChevronRight />
+                  </span>
+                </div> */}
+                </div>
+                <div className="right">
+                  <div style={{ maxWidth: "500px", marginLeft: "auto" }}>
+                    <Image src="/static/img/stress.svg" alt="" />
+                  </div>
+                </div>
+                <style jsx>
+                  {`
+                    .image-section {
+                      display: flex;
+                      flex-direction: column;
+                    }
+
+                    .cta-button {
+                      color: ${theme.palette.primary};
+                      letter-spacing: 1px;
+                      text-decoration: none;
+                      text-transform: uppercase;
+                      font-weight: bold;
+                      position: relative;
+                      display: inline-block;
+                      cursor: pointer;
+                    }
+
+                    .cta-button span {
+                      display: inline-block;
+                      width: 18px;
+                      height: 18px;
+                      position: absolute;
+                      top: 50%;
+                      right: -1rem;
+                      transform: translate(0, -50%);
+                      fill: ${theme.palette.primary};
+                      transition: all 200ms ease-in-out;
+                    }
+
+                    .cta-button:hover span {
+                      transform: translate(5px, -50%);
+                    }
+
+                    .left {
+                      margin-bottom: 2rem;
+                    }
+
+                    @media (min-width: ${theme.breakpoints.md}) {
+                      .image-section {
+                        flex-direction: row;
+                        align-items: center;
+                      }
+
+                      .left {
+                        width: 40%;
+                        padding-right: 2rem;
+                      }
+
+                      .right {
+                        width: 60%;
+                      }
+                    }
+                  `}
+                </style>
+              </div>
+            </Section>
+          </Container>
+          {/* <Container>
+            <Section>
               <Headline centered variant="small">
-                Pag Manu-Mano ang Pag-Monitor,
-                <br />
-                Matagal ang Bayaran
+                Pag Manu-Mano ang Pag-Monitor, Matagal ang Bayaran
               </Headline>
               <Textline>
                 Traditional logistics management usually causes goods or
@@ -196,12 +281,15 @@ export default function Home() {
                 style={{ margin: "1rem auto", maxWidth: "1100px" }}
               >
                 <div className="web-view">
-                  <Image src="/static/img/illust1.svg" />
+                  <Image
+                    src="/static/img/illust1.svg"
+                    alt="Diagram of the problem"
+                  />
                 </div>
                 <div className="mobile-view">
                   <Image
-                    className="mobile-view"
                     src="/static/img/illust1-mobile.svg"
+                    alt="Diagram of the problem"
                   />
                 </div>
                 <style jsx>
@@ -222,14 +310,12 @@ export default function Home() {
                 </style>
               </div>
             </Section>
-          </Container>
+          </Container> */}
         </div>
         <Container>
           <Section>
             <Headline centered variant="small">
-              Sa InsightSCS, mababayaran ka
-              <br />
-              sa loob ng 5 - 10 na araw
+              Sa InsightSCS, Mababayaran ka sa Loob ng 5 - 10 na Araw
             </Headline>
             <Textline>
               Eliminate non-essential costs and speed up payments through
@@ -240,12 +326,15 @@ export default function Home() {
               style={{ margin: "1rem auto", maxWidth: "1100px" }}
             >
               <div className="web-view">
-                <Image src="/static/img/illust2.svg" />
+                <Image
+                  src="/static/img/illust2.svg"
+                  alt="Diagram of the solution"
+                />
               </div>
               <div className="mobile-view">
                 <Image
-                  className="mobile-view"
                   src="/static/img/illust2-mobile.svg"
+                  alt="Diagram of the solution"
                 />
               </div>
               <style jsx>
@@ -266,92 +355,6 @@ export default function Home() {
               </style>
             </div>
           </Section>
-          {/* <Section>
-          <div className="image-section">
-            <div className="left">
-              <Headline variant="small">
-                Pag Manu-Mano ang Pag-Monitor, Matagal ang Bayaran
-              </Headline>
-              <p>
-                Traditional logistics management usually causes goods or
-                services to be paid in months.
-              </p>
-              <div className="cta-button" href="#">
-                <ScrollLink
-                  to="section1"
-                  spy={true}
-                  smooth={true}
-                  duration={1000}
-                >
-                  Start Now
-                </ScrollLink>
-                <span>
-                  <ChevronRight />
-                </span>
-              </div>
-            </div>
-            <div className="right">
-              <img
-                src="https://via.placeholder.com/800x400?text=InsightSCS"
-                alt=""
-              />
-            </div>
-            <style jsx>
-              {`
-                .image-section {
-                  display: flex;
-                  flex-direction: column;
-                }
-
-                .cta-button {
-                  color: ${theme.palette.primary};
-                  letter-spacing: 1px;
-                  text-decoration: none;
-                  text-transform: uppercase;
-                  font-weight: bold;
-                  position: relative;
-                  display: inline-block;
-                  cursor: pointer;
-                }
-
-                .cta-button span {
-                  display: inline-block;
-                  width: 18px;
-                  height: 18px;
-                  position: absolute;
-                  top: 50%;
-                  right: -1rem;
-                  transform: translate(0, -50%);
-                  fill: ${theme.palette.primary};
-                  transition: all 200ms ease-in-out;
-                }
-
-                .cta-button:hover span {
-                  transform: translate(5px, -50%);
-                }
-
-                .left {
-                  margin-bottom: 2rem;
-                }
-
-                @media (min-width: ${theme.breakpoints.md}) {
-                  .image-section {
-                    flex-direction: row;
-                  }
-
-                  .left {
-                    width: 40%;
-                    padding-right: 2rem;
-                  }
-
-                  .right {
-                    width: 60%;
-                  }
-                }
-              `}
-            </style>
-          </div>
-        </Section> */}
           <Section>
             <Cta />
           </Section>

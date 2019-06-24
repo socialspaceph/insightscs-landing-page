@@ -10,6 +10,7 @@ export default function Headline({ children, centered, variant, ...props }) {
       <style jsx>{`
         font-size: ${variant === "small" ? "1.5rem" : "2rem"};
         margin: 0 0 1rem;
+        max-width: 600px;
 
         @media (min-width: ${theme.breakpoints.lg}) {
           font-size: ${variant === "small" ? "2.2rem" : "3rem"};
@@ -18,6 +19,7 @@ export default function Headline({ children, centered, variant, ...props }) {
         ${centered &&
           `
           text-align: center;
+          margin: 0 auto 1rem;
         `}
       `}</style>
     </h2>
