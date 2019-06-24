@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import { heroValidationSchema } from "../../lib/validationSchemas";
 import { Formik, Form, Field } from "formik";
 
+import HeroSubmit from "./HeroSubmit";
+
 import { Button, TextInputGroup } from "../../elements";
 
-import * as gtag from "../../lib/gtag";
+// import * as gtag from "../../lib/gtag";
 
 export default function HeroForm({ theme }) {
   return (
@@ -18,55 +20,69 @@ export default function HeroForm({ theme }) {
           contact: "",
           no_of_trucks: ""
         }}
-        onSubmit={values => {
-          console.log(values);
+        onSubmit={(values, { setStatus }) => {
+          // Set form to submitting
+          setStatus({ submitting: true, success: false });
 
+          setTimeout(() => {
+            console.log(values);
+            setStatus({ submitting: false, success: true });
+          }, 2000);
           // Send gtag event
-          gtag.event({
-            action: "submit_form",
-            category: "Hero",
-            label: values.email
-          });
+          // gtag.event({
+          //   action: "submit_form",
+          //   category: "Hero",
+          //   label: values.email
+          // });
         }}
       >
-        {() => (
-          <Form>
-            <Field
-              name="name"
-              id="name"
-              label="Name"
-              required
-              component={TextInputGroup}
-            />
-            <Field
-              name="email"
-              id="email"
-              label="Email"
-              type="email"
-              required
-              component={TextInputGroup}
-            />
-            <Field
-              name="contact"
-              id="contact"
-              label="Contact Number"
-              type="number"
-              required
-              component={TextInputGroup}
-            />
-            <Field
-              name="no_of_trucks"
-              id="no_of_trucks"
-              label="How many trucks?"
-              type="number"
-              required
-              component={TextInputGroup}
-            />
-            <Button variant="primary" block>
-              Submit
-            </Button>
-          </Form>
-        )}
+        {({ status = { submitting: false, success: false } }) =>
+          status.success ? (
+            <HeroSubmit />
+          ) : (
+            <Form>
+              <Field
+                name="name"
+                id="name"
+                label="Name"
+                required
+                component={TextInputGroup}
+              />
+              <Field
+                name="email"
+                id="email"
+                label="Email"
+                type="email"
+                required
+                component={TextInputGroup}
+              />
+              <Field
+                name="contact"
+                id="contact"
+                label="Contact Number"
+                type="number"
+                required
+                component={TextInputGroup}
+              />
+              <Field
+                name="no_of_trucks"
+                id="no_of_trucks"
+                label="How many trucks?"
+                type="number"
+                required
+                component={TextInputGroup}
+              />
+              <Button
+                variant="primary"
+                block
+                type="submit"
+                disabled={status.submitting}
+              >
+                {status.submitting ? "Submitting..." : "Submit"}
+              </Button>
+            </Form>
+          )
+        }
       </Formik>
       <style jsx>
         {`
@@ -76,6 +92,7 @@ export default function HeroForm({ theme }) {
             border-radius: 15px;
             padding: 1rem;
             background: ${theme.palette.white};
+            min-height: 400px;
           }
 
           @media (min-width: ${theme.breakpoints.md}) {
