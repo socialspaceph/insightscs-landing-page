@@ -41,7 +41,7 @@ export default function Home() {
           <Section>
             <Container>
               <Headline centered variant="small">
-                All-in-one Logistics and Financing Para sa Negosyo Mo
+                All-in-one Logistics and Financing Solution
               </Headline>
               <div className="benefits-container">
                 <div className="benefits__item">
@@ -184,7 +184,8 @@ export default function Home() {
                 <div className="left">
                   <Headline variant="small">
                     Traditional logistics management usually causes goods or
-                    services to be paid in 100+ days
+                    services to be paid in{" "}
+                    <span style={{ color: "#FF0000" }}>100+ days</span>
                   </Headline>
                   {/* <p>
                     Traditional logistics management usually causes goods or
@@ -245,6 +246,7 @@ export default function Home() {
 
                     .left {
                       margin-bottom: 2rem;
+                      text-align: center;
                     }
 
                     @media (min-width: ${theme.breakpoints.md}) {
@@ -256,6 +258,7 @@ export default function Home() {
                       .left {
                         width: 40%;
                         padding-right: 2rem;
+                        text-align: left;
                       }
 
                       .right {

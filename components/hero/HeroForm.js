@@ -73,7 +73,7 @@ export default function HeroForm({ theme }) {
               <Field
                 name="no_of_trucks"
                 id="no_of_trucks"
-                label="How many trucks?"
+                label="How many trucks do you have?"
                 type="number"
                 required
                 component={TextInputGroup}

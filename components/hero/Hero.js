@@ -19,7 +19,7 @@ export default function Hero({ theme }) {
             </div>
           )}
         </div>
-        <h1 className="headline">Sa InsightSCS, tuluy-tuloy ang negosyo mo.</h1>
+        <h1 className="headline">Sa InsightSCS, Tuluy-tuloy ang Negosyo Mo.</h1>
         <p>
           Maximize your trucking and shipping business with shorter payouts and
           end-to-end visibility with InsightSCS

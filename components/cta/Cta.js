@@ -36,7 +36,7 @@ export default function Cta() {
           variant="primary"
           style={{ marginTop: "1rem" }}
         >
-          Start Now
+          Sign Up Today
         </Button>
       </Link>
       <style jsx>{`
