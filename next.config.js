@@ -1,15 +1,15 @@
-const PRODUCTION_URL = 'http://philippines.insightscs.com/'
+const PRODUCTION_URL = "";
 
-const isProduction = process.env.NODE_ENV === 'production'
+const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = {
-  assetPrefix: isProduction ? PRODUCTION_URL : '',
+  assetPrefix: isProduction ? PRODUCTION_URL : "",
   publicRuntimeConfig: {
-    linkPrefix: isProduction ? PRODUCTION_URL : '',
+    linkPrefix: isProduction ? PRODUCTION_URL : ""
   },
   exportPathMap: async function(defaultPathMap) {
     return {
-      '/': { page: '/' },
-    }
-  },
-}
+      "/": { page: "/" }
+    };
+  }
+};
