@@ -43,6 +43,7 @@ export default function Meta() {
           padding: 0;
 
           font-family: "Alegreya Sans", sans-serif;
+          font-size: 110%;
         }
 
         body {

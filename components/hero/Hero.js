@@ -19,11 +19,8 @@ export default function Hero({ theme }) {
             </div>
           )}
         </div>
-        <h1 className="headline">Sa InsightSCS, Tuluy-tuloy ang Negosyo Mo.</h1>
-        <p>
-          Maximize your trucking and shipping business with shorter payouts and
-          end-to-end visibility with InsightSCS
-        </p>
+        <h1 className="headline">Supply Chain Finanching for SMEs</h1>
+        <p>Get access to faster payouts bank financing with InsightSCS.</p>
       </div>
       <div className="right">
         <HeroForm theme={theme} />
@@ -58,7 +55,7 @@ export default function Hero({ theme }) {
           }
 
           .headline {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-top: 0;
           }
 

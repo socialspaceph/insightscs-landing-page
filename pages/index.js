@@ -3,8 +3,16 @@ import getConfig from "next-server/config";
 import Hero from "../components/hero";
 import Cta from "../components/cta";
 import ThemeContext from "../lib/ThemeContext";
+import { Link } from "react-scroll";
 
-import { Headline, Textline, Container, Section, Image } from "../elements";
+import {
+  Headline,
+  Textline,
+  Container,
+  Section,
+  Image,
+  Button
+} from "../elements";
 import { Shippers, Consignees, Transporters, Financers } from "../icons";
 
 const { publicRuntimeConfig } = getConfig();
@@ -41,65 +49,21 @@ export default function Home() {
           <Section>
             <Container>
               <Headline centered variant="small">
-                All-in-one Logistics and Financing Solution
+                Small to medium manufacturers & distributors have limited access
+                to financing.
               </Headline>
-              <div className="benefits-container">
-                <div className="benefits__item">
-                  <div className="content">
-                    <div className="left">
-                      <Shippers style={{ width: "60px", height: "60px" }} />
-                    </div>
-                    <div className="right">
-                      <h3>Shippers</h3>
-                      <p>
-                        Increase transparency of price, shipment events, and
-                        ownership of the entire shipment process.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="benefits__item">
-                  <div className="content">
-                    <div className="left">
-                      <Consignees style={{ width: "60px", height: "60px" }} />
-                    </div>
-                    <div className="right">
-                      <h3>Consignees</h3>
-                      <p>
-                        Benefit from reduced documentation and compliance costs
-                        while increasing traceability.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="benefits__item">
-                  <div className="content">
-                    <div className="left">
-                      <Transporters style={{ width: "60px", height: "60px" }} />
-                    </div>
-                    <div className="right">
-                      <h3>Transporters</h3>
-                      <p>
-                        Accelerate payments and simplify claims settlement with
-                        enterprise-grade software.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="benefits__item">
-                  <div className="content">
-                    <div className="left">
-                      <Financers style={{ width: "60px", height: "60px" }} />
-                    </div>
-                    <div className="right">
-                      <h3>Financers</h3>
-                      <p>
-                        Get unprecedented visibility to order data and related
-                        records to reduce cost and risk.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <p style={{ textAlign: "center" }}>
+                  Traditional logistics management makes it hard for SMEs to
+                  apply for bank financing because of lack of visibility and
+                  inefficient paper-based supply chain systems. Oftentimes,
+                  businesses have to wait{" "}
+                  <span style={{ color: "red", fontWeight: "bold" }}>
+                    100+ days
+                  </span>{" "}
+                  before they get paid. This makes growth extremely difficult,
+                  especially for businesses outside Metro Manila.
+                </p>
               </div>
             </Container>
           </Section>
@@ -123,36 +87,6 @@ export default function Home() {
               background: ${theme.palette.white};
               border-top-left-radius: 4rem;
               border-top-right-radius: 4rem;
-            }
-
-            .benefits-container {
-              display: flex;
-              justify-content: center;
-              flex-direction: column;
-              margin-top: 3rem;
-              flex-wrap: wrap;
-            }
-
-            .benefits__item {
-              width: 100%;
-              margin-bottom: 2rem;
-            }
-
-            .benefits__item .content {
-              display: flex;
-            }
-
-            .benefits__item .content .right {
-              padding-left: 1rem;
-            }
-
-            .benefits__item .content h3 {
-              margin-top: 0;
-            }
-
-            .benefits__item > img {
-              display: block;
-              width: 100%;
             }
 
             @media (min-width: ${theme.breakpoints.md}) {
@@ -180,34 +114,32 @@ export default function Home() {
         <div style={{ backgroundColor: "#f1f1f1" }}>
           <Container>
             <Section>
+              <Headline centered variant="small">
+                Lower financing risk with Blockchain proof of delivery
+              </Headline>
               <div className="image-section">
                 <div className="left">
-                  <Headline variant="small">
-                    Traditional logistics management usually causes goods or
-                    services to be paid in{" "}
-                    <span style={{ color: "#FF0000" }}>100+ days</span>
-                  </Headline>
-                  {/* <p>
-                    Traditional logistics management usually causes goods or
-                    services to be paid in months.
-                  </p> */}
-                  {/* <div className="cta-button" href="#">
-                  <ScrollLink
-                    to="section1"
-                    spy={true}
-                    smooth={true}
-                    duration={1000}
-                  >
-                    Start Now
-                  </ScrollLink>
-                  <span>
-                    <ChevronRight />
-                  </span>
-                </div> */}
+                  <ul>
+                    <li>
+                      Single platform for accounting, inventory, transport and
+                      warehouse management.
+                    </li>
+                    <li>Secure and immutable proof of delivery.</li>
+                    <li>Better rates from banks.</li>
+                    <li>Faster payments. (up to 2-5 days)</li>
+                  </ul>
+                  <Link to="section1" spy={true} smooth={true} duration={1000}>
+                    <Button variant="primary" style={{ width: "100%" }}>
+                      Send Application
+                    </Button>
+                  </Link>
                 </div>
                 <div className="right">
                   <div style={{ maxWidth: "500px", marginLeft: "auto" }}>
-                    <Image src="/static/img/stress.svg" alt="" />
+                    <Image
+                      src="https://via.placeholder.com/1200x800?text=InsightSCS"
+                      alt=""
+                    />
                   </div>
                 </div>
                 <style jsx>
@@ -270,98 +202,201 @@ export default function Home() {
               </div>
             </Section>
           </Container>
-          {/* <Container>
+        </div>
+        <Container>
+          <Section>
+            <Headline centered variant="small">
+              Our financing partners
+            </Headline>
+            <div
+              style={{ display: "flex", maxWidth: "1000px", margin: "0 auto" }}
+            >
+              <Image
+                style={{ width: "30%" }}
+                src="https://via.placeholder.com/500x300?text=Financing+Partner"
+              />
+              <Image
+                style={{ width: "30%" }}
+                src="https://via.placeholder.com/500x300?text=Financing+Partner"
+              />
+            </div>
+          </Section>
+        </Container>
+        <div style={{ backgroundColor: "#f1f1f1" }}>
+          <Container>
             <Section>
               <Headline centered variant="small">
-                Pag Manu-Mano ang Pag-Monitor, Matagal ang Bayaran
+                Success Story
               </Headline>
-              <Textline>
-                Traditional logistics management usually causes goods or
-                services to be paid in months.
-              </Textline>
-              <div
-                className="svg-illust"
-                style={{ margin: "1rem auto", maxWidth: "1100px" }}
-              >
-                <div className="web-view">
-                  <Image
-                    src="/static/img/illust1.svg"
-                    alt="Diagram of the problem"
-                  />
+              <div className="image-section">
+                <div className="right">
+                  <div style={{ maxWidth: "500px", marginRight: "auto" }}>
+                    <Image
+                      src="https://via.placeholder.com/1200x800?text=InsightSCS"
+                      alt=""
+                    />
+                  </div>
                 </div>
-                <div className="mobile-view">
-                  <Image
-                    src="/static/img/illust1-mobile.svg"
-                    alt="Diagram of the problem"
-                  />
+
+                <div className="left">
+                  <ul>
+                    <li>BemBem Minimart</li>
+                    <li>
+                      Boracay-based SME that supplies fruits & vegetables to
+                      hotels and restaurants.
+                    </li>
+                    <li>
+                      4x monthly revenue growth, faster payout rate. (2-5 days
+                      versus 100+ days)
+                    </li>
+                  </ul>
                 </div>
                 <style jsx>
                   {`
-                    .web-view {
-                      display: none;
+                    .image-section {
+                      display: flex;
+                      flex-direction: column;
                     }
 
-                    @media (min-width: 800px) {
-                      .web-view {
-                        display: block;
+                    .cta-button {
+                      color: ${theme.palette.primary};
+                      letter-spacing: 1px;
+                      text-decoration: none;
+                      text-transform: uppercase;
+                      font-weight: bold;
+                      position: relative;
+                      display: inline-block;
+                      cursor: pointer;
+                    }
+
+                    .cta-button span {
+                      display: inline-block;
+                      width: 18px;
+                      height: 18px;
+                      position: absolute;
+                      top: 50%;
+                      right: -1rem;
+                      transform: translate(0, -50%);
+                      fill: ${theme.palette.primary};
+                      transition: all 200ms ease-in-out;
+                    }
+
+                    .cta-button:hover span {
+                      transform: translate(5px, -50%);
+                    }
+
+                    .left {
+                      margin-bottom: 2rem;
+                      text-align: center;
+                    }
+
+                    @media (min-width: ${theme.breakpoints.md}) {
+                      .image-section {
+                        flex-direction: row;
+                        align-items: center;
                       }
-                      .mobile-view {
-                        display: none;
+
+                      .left {
+                        padding-right: 2rem;
+                        text-align: left;
+                        width: 40%;
+                      }
+
+                      .right {
+                        width: 60%;
                       }
                     }
                   `}
                 </style>
               </div>
             </Section>
-          </Container> */}
+          </Container>
         </div>
-        <Container>
-          <Section>
-            <Headline centered variant="small">
-              Sa InsightSCS, Mababayaran ka sa Loob ng 5 - 10 na Araw
-            </Headline>
-            <Textline>
-              Eliminate non-essential costs and speed up payments through
-              blockchain-enabled processes
-            </Textline>
-            <div
-              className="svg-illust"
-              style={{ margin: "1rem auto", maxWidth: "1100px" }}
-            >
-              <div className="web-view">
-                <Image
-                  src="/static/img/illust2.svg"
-                  alt="Diagram of the solution"
-                />
-              </div>
-              <div className="mobile-view">
-                <Image
-                  src="/static/img/illust2-mobile.svg"
-                  alt="Diagram of the solution"
-                />
-              </div>
-              <style jsx>
-                {`
-                  .web-view {
-                    display: none;
-                  }
+        <div style={{ backgroundColor: "#f1f1f1" }}>
+          <Container>
+            <Section>
+              <div className="image-section">
+                <div className="left">
+                  <Headline>Join us today</Headline>
+                  <p style={{ fontSize: "1.2rem" }}>
+                    Apply for supply chain financing and get access to
+                    InsightSCS app.
+                  </p>
+                  <Link to="section1" spy={true} smooth={true} duration={1000}>
+                    <Button variant="primary" style={{ width: "100%" }}>
+                      Send Application
+                    </Button>
+                  </Link>
+                </div>
+                <div className="right">
+                  <div style={{ maxWidth: "500px", marginLeft: "auto" }}>
+                    <Image
+                      src="https://via.placeholder.com/1200x800?text=InsightSCS"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <style jsx>
+                  {`
+                    .image-section {
+                      display: flex;
+                      flex-direction: column;
+                    }
 
-                  @media (min-width: 800px) {
-                    .web-view {
-                      display: block;
+                    .cta-button {
+                      color: ${theme.palette.primary};
+                      letter-spacing: 1px;
+                      text-decoration: none;
+                      text-transform: uppercase;
+                      font-weight: bold;
+                      position: relative;
+                      display: inline-block;
+                      cursor: pointer;
                     }
-                    .mobile-view {
-                      display: none;
+
+                    .cta-button span {
+                      display: inline-block;
+                      width: 18px;
+                      height: 18px;
+                      position: absolute;
+                      top: 50%;
+                      right: -1rem;
+                      transform: translate(0, -50%);
+                      fill: ${theme.palette.primary};
+                      transition: all 200ms ease-in-out;
                     }
-                  }
-                `}
-              </style>
-            </div>
-          </Section>
-          <Section>
-            <Cta />
-          </Section>
-        </Container>
+
+                    .cta-button:hover span {
+                      transform: translate(5px, -50%);
+                    }
+
+                    .left {
+                      margin-bottom: 2rem;
+                      text-align: center;
+                    }
+
+                    @media (min-width: ${theme.breakpoints.md}) {
+                      .image-section {
+                        flex-direction: row;
+                        align-items: center;
+                      }
+
+                      .left {
+                        width: 40%;
+                        padding-right: 2rem;
+                        text-align: left;
+                      }
+
+                      .right {
+                        width: 60%;
+                      }
+                    }
+                  `}
+                </style>
+              </div>
+            </Section>
+          </Container>
+        </div>
       </div>
     </>
   );
