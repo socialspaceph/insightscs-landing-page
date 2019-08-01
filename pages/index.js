@@ -312,91 +312,89 @@ export default function Home() {
             </Section>
           </Container>
         </div>
-        <div style={{ backgroundColor: "#f1f1f1" }}>
-          <Container>
-            <Section>
-              <div className="image-section">
-                <div className="left">
-                  <Headline>Join us today</Headline>
-                  <p style={{ fontSize: "1.2rem" }}>
-                    Apply for supply chain financing and get access to
-                    InsightSCS app.
-                  </p>
-                  <Link to="section1" spy={true} smooth={true} duration={1000}>
-                    <Button variant="primary" style={{ width: "100%" }}>
-                      Send Application
-                    </Button>
-                  </Link>
+        <Container>
+          <Section>
+            <div className="image-section">
+              <div className="left">
+                <Headline>Join us today</Headline>
+                <p style={{ fontSize: "1.2rem" }}>
+                  Apply for supply chain financing and get access to InsightSCS
+                  app.
+                </p>
+                <Link to="section1" spy={true} smooth={true} duration={1000}>
+                  <Button variant="primary" style={{ width: "100%" }}>
+                    Send Application
+                  </Button>
+                </Link>
+              </div>
+              <div className="right">
+                <div style={{ maxWidth: "500px", marginLeft: "auto" }}>
+                  <Image
+                    src="https://via.placeholder.com/1200x800?text=InsightSCS"
+                    alt=""
+                  />
                 </div>
-                <div className="right">
-                  <div style={{ maxWidth: "500px", marginLeft: "auto" }}>
-                    <Image
-                      src="https://via.placeholder.com/1200x800?text=InsightSCS"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <style jsx>
-                  {`
+              </div>
+              <style jsx>
+                {`
+                  .image-section {
+                    display: flex;
+                    flex-direction: column;
+                  }
+
+                  .cta-button {
+                    color: ${theme.palette.primary};
+                    letter-spacing: 1px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    position: relative;
+                    display: inline-block;
+                    cursor: pointer;
+                  }
+
+                  .cta-button span {
+                    display: inline-block;
+                    width: 18px;
+                    height: 18px;
+                    position: absolute;
+                    top: 50%;
+                    right: -1rem;
+                    transform: translate(0, -50%);
+                    fill: ${theme.palette.primary};
+                    transition: all 200ms ease-in-out;
+                  }
+
+                  .cta-button:hover span {
+                    transform: translate(5px, -50%);
+                  }
+
+                  .left {
+                    margin-bottom: 2rem;
+                    text-align: center;
+                  }
+
+                  @media (min-width: ${theme.breakpoints.md}) {
                     .image-section {
-                      display: flex;
-                      flex-direction: column;
-                    }
-
-                    .cta-button {
-                      color: ${theme.palette.primary};
-                      letter-spacing: 1px;
-                      text-decoration: none;
-                      text-transform: uppercase;
-                      font-weight: bold;
-                      position: relative;
-                      display: inline-block;
-                      cursor: pointer;
-                    }
-
-                    .cta-button span {
-                      display: inline-block;
-                      width: 18px;
-                      height: 18px;
-                      position: absolute;
-                      top: 50%;
-                      right: -1rem;
-                      transform: translate(0, -50%);
-                      fill: ${theme.palette.primary};
-                      transition: all 200ms ease-in-out;
-                    }
-
-                    .cta-button:hover span {
-                      transform: translate(5px, -50%);
+                      flex-direction: row;
+                      align-items: center;
                     }
 
                     .left {
-                      margin-bottom: 2rem;
-                      text-align: center;
+                      width: 40%;
+                      padding-right: 2rem;
+                      text-align: left;
                     }
 
-                    @media (min-width: ${theme.breakpoints.md}) {
-                      .image-section {
-                        flex-direction: row;
-                        align-items: center;
-                      }
-
-                      .left {
-                        width: 40%;
-                        padding-right: 2rem;
-                        text-align: left;
-                      }
-
-                      .right {
-                        width: 60%;
-                      }
+                    .right {
+                      width: 60%;
                     }
-                  `}
-                </style>
-              </div>
-            </Section>
-          </Container>
-        </div>
+                  }
+                `}
+              </style>
+            </div>
+          </Section>
+        </Container>
       </div>
     </>
   );
