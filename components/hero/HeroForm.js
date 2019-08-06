@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { heroValidationSchema } from "../../lib/validationSchemas";
-import { formSubmission } from "../../lib/formSubmission";
-import { Formik, Form, Field } from "formik";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { heroValidationSchema } from '../../lib/validationSchemas';
+import { formSubmission } from '../../lib/formSubmission';
+import { Formik, Form, Field } from 'formik';
 
-import HeroSubmit from "./HeroSubmit";
+import HeroSubmit from './HeroSubmit';
 
-import { Button, TextInputGroup } from "../../elements";
+import { Button, TextInputGroup } from '../../elements';
 
 // import * as gtag from "../../lib/gtag";
 
@@ -16,10 +16,10 @@ export default function HeroForm({ theme }) {
       <Formik
         validationSchema={heroValidationSchema}
         initialValues={{
-          name: "",
-          email: "",
-          contact: "",
-          no_of_trucks: ""
+          name: '',
+          email: '',
+          contact: '',
+          company_name: ''
         }}
         onSubmit={(values, { setStatus, resetForm }) => {
           // Set form to submitting
@@ -71,10 +71,10 @@ export default function HeroForm({ theme }) {
                 component={TextInputGroup}
               />
               <Field
-                name="no_of_trucks"
-                id="no_of_trucks"
-                label="How many trucks do you have?"
-                type="number"
+                name="company_name"
+                id="company_name"
+                label="Company Name"
+                type="text"
                 required
                 component={TextInputGroup}
               />
@@ -84,7 +84,7 @@ export default function HeroForm({ theme }) {
                 type="submit"
                 disabled={status.submitting}
               >
-                {status.submitting ? "Submitting..." : "Submit"}
+                {status.submitting ? 'Submitting...' : 'Submit'}
               </Button>
             </Form>
           )
