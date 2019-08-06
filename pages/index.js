@@ -1,9 +1,9 @@
-import React from "react";
-import getConfig from "next-server/config";
-import Hero from "../components/hero";
-import Cta from "../components/cta";
-import ThemeContext from "../lib/ThemeContext";
-import { Link } from "react-scroll";
+import React from 'react';
+import getConfig from 'next-server/config';
+import Hero from '../components/hero';
+import Cta from '../components/cta';
+import ThemeContext from '../lib/ThemeContext';
+import { Link } from 'react-scroll';
 
 import {
   Headline,
@@ -12,8 +12,8 @@ import {
   Section,
   Image,
   Button
-} from "../elements";
-import { Shippers, Consignees, Transporters, Financers } from "../icons";
+} from '../elements';
+import { Shippers, Consignees, Transporters, Financers } from '../icons';
 
 const { publicRuntimeConfig } = getConfig();
 const linkPrefix = publicRuntimeConfig.linkPrefix;
@@ -36,14 +36,15 @@ export default function Home() {
               right: 0;
               bottom: 0%;
               height: 100%;
-              background: url("${linkPrefix}static/img/bg.jpg") center bottom no-repeat;
+              background-color: #666370;
+              // background: url("${linkPrefix}static/img/bg.jpg") center bottom no-repeat;
               background-size: cover;
               z-index: -1;
             }
             `}
         </style>
       </Container>
-      <div style={{ backgroundColor: "#FFF" }}>
+      <div style={{ backgroundColor: '#FFF' }}>
         <div className="benefit-section">
           <div className="graybg" />
           <Section>
@@ -53,14 +54,14 @@ export default function Home() {
                 to financing.
               </Headline>
               <div>
-                <p style={{ textAlign: "center" }}>
+                <p style={{ textAlign: 'center' }}>
                   Traditional logistics management makes it hard for SMEs to
                   apply for bank financing because of lack of visibility and
                   inefficient paper-based supply chain systems. Oftentimes,
-                  businesses have to wait{" "}
-                  <span style={{ color: "red", fontWeight: "bold" }}>
+                  businesses have to wait{' '}
+                  <span style={{ color: 'red', fontWeight: 'bold' }}>
                     100+ days
-                  </span>{" "}
+                  </span>{' '}
                   before they get paid. This makes growth extremely difficult,
                   especially for businesses outside Metro Manila.
                 </p>
@@ -111,7 +112,7 @@ export default function Home() {
           `}
           </style>
         </div>
-        <div style={{ backgroundColor: "#f1f1f1" }}>
+        <div style={{ backgroundColor: '#f1f1f1' }}>
           <Container>
             <Section>
               <Headline centered variant="small">
@@ -129,13 +130,13 @@ export default function Home() {
                     <li>Faster payments. (up to 2-5 days)</li>
                   </ul>
                   <Link to="section1" spy={true} smooth={true} duration={1000}>
-                    <Button variant="primary" style={{ width: "100%" }}>
+                    <Button variant="primary" style={{ width: '100%' }}>
                       Send Application
                     </Button>
                   </Link>
                 </div>
                 <div className="right">
-                  <div style={{ maxWidth: "500px", marginLeft: "auto" }}>
+                  <div style={{ maxWidth: '500px', marginLeft: 'auto' }}>
                     <Image
                       src="https://via.placeholder.com/1200x800?text=InsightSCS"
                       alt=""
@@ -209,20 +210,20 @@ export default function Home() {
               Our financing partners
             </Headline>
             <div
-              style={{ display: "flex", maxWidth: "1000px", margin: "0 auto" }}
+              style={{ display: 'flex', maxWidth: '1000px', margin: '0 auto' }}
             >
               <Image
-                style={{ width: "30%" }}
+                style={{ width: '30%' }}
                 src="https://via.placeholder.com/500x300?text=Financing+Partner"
               />
               <Image
-                style={{ width: "30%" }}
+                style={{ width: '30%' }}
                 src="https://via.placeholder.com/500x300?text=Financing+Partner"
               />
             </div>
           </Section>
         </Container>
-        <div style={{ backgroundColor: "#f1f1f1" }}>
+        <div style={{ backgroundColor: '#f1f1f1' }}>
           <Container>
             <Section>
               <Headline centered variant="small">
@@ -230,7 +231,7 @@ export default function Home() {
               </Headline>
               <div className="image-section">
                 <div className="right">
-                  <div style={{ maxWidth: "500px", marginRight: "auto" }}>
+                  <div style={{ maxWidth: '500px', marginRight: 'auto' }}>
                     <Image
                       src="https://via.placeholder.com/1200x800?text=InsightSCS"
                       alt=""
@@ -317,18 +318,18 @@ export default function Home() {
             <div className="image-section">
               <div className="left">
                 <Headline>Join us today</Headline>
-                <p style={{ fontSize: "1.2rem" }}>
+                <p style={{ fontSize: '1.2rem' }}>
                   Apply for supply chain financing and get access to InsightSCS
                   app.
                 </p>
                 <Link to="section1" spy={true} smooth={true} duration={1000}>
-                  <Button variant="primary" style={{ width: "100%" }}>
+                  <Button variant="primary" style={{ width: '100%' }}>
                     Send Application
                   </Button>
                 </Link>
               </div>
               <div className="right">
-                <div style={{ maxWidth: "500px", marginLeft: "auto" }}>
+                <div style={{ maxWidth: '500px', marginLeft: 'auto' }}>
                   <Image
                     src="https://via.placeholder.com/1200x800?text=InsightSCS"
                     alt=""
