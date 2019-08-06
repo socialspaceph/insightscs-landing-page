@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import website from "../../config/website";
+import React from 'react';
+import PropTypes from 'prop-types';
+import website from '../../config/website';
 
-import HeroForm from "./HeroForm";
-import SocialItem from "../socialItem";
-import { FacebookIcon } from "../../icons";
+import HeroForm from './HeroForm';
+import SocialItem from '../socialItem';
+import { FacebookIcon } from '../../icons';
 
 export default function Hero({ theme }) {
   return (
@@ -20,7 +20,10 @@ export default function Hero({ theme }) {
           )}
         </div>
         <h1 className="headline">Supply Chain Finanching for SMEs</h1>
-        <p>Get access to faster payouts bank financing with InsightSCS.</p>
+        <p>
+          Get access to lower financing rates and faster cash flow with
+          InsightSCS digitized logistics solutions. Quality your business today.
+        </p>
       </div>
       <div className="right">
         <HeroForm theme={theme} />
