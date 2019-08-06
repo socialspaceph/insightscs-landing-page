@@ -255,7 +255,7 @@ export default function Home() {
               </Headline>
               <div className="image-section">
                 <div className="right">
-                  <div style={{ maxWidth: '500px', marginRight: 'auto' }}>
+                  <div className="image-container">
                     <Image
                       src="https://via.placeholder.com/1200x800?text=InsightSCS"
                       alt=""
@@ -290,6 +290,11 @@ export default function Home() {
                       flex-direction: column;
                     }
 
+                    .image-container {
+                      margin: 0 auto;
+                      max-width: 500px;
+                    }
+
                     .cta-button {
                       color: ${theme.palette.primary};
                       letter-spacing: 1px;
@@ -322,9 +327,10 @@ export default function Home() {
                       text-align: center;
                     }
 
-                    @media (min-width: ${theme.breakpoints.md}) {
+                    @media (min-width: ${theme.breakpoints.lg}) {
                       .image-section {
                         flex-direction: row;
+                        justify-content: center;
                         align-items: center;
                       }
 
@@ -335,7 +341,8 @@ export default function Home() {
                       }
 
                       .right {
-                        width: 60%;
+                        // width: 60%;
+                        padding: 2rem;
                       }
                     }
                   `}
