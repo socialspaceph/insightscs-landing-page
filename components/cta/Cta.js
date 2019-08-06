@@ -1,8 +1,8 @@
-import React from "react";
-import ThemeContext from "../../lib/ThemeContext";
-import { Link } from "react-scroll";
-import { Headline, Button } from "../../elements";
-import { MessageBubble, Wave, Heart, Mail, Rotate } from "../../icons";
+import React from 'react';
+import ThemeContext from '../../lib/ThemeContext';
+import { Link } from 'react-scroll';
+import { Headline, Textline, Button } from '../../elements';
+import { MessageBubble, Wave, Heart, Mail, Rotate } from '../../icons';
 
 export default function Cta() {
   const theme = React.useContext(ThemeContext);
@@ -29,14 +29,17 @@ export default function Cta() {
           <Rotate />
         </div>
       </div>
-      <Headline centered>Ready to get started?</Headline>
+      <Headline centered>Quality Your Business Today</Headline>
+      <Textline>
+        Apply for supply chain financing and get access to the InsightSCS app
+      </Textline>
       <Link to="section1" spy={true} smooth={true} duration={1000}>
         <Button
           className="button"
           variant="primary"
-          style={{ marginTop: "1rem" }}
+          style={{ marginTop: '1rem' }}
         >
-          Sign Up Today
+          Send Application
         </Button>
       </Link>
       <style jsx>{`
