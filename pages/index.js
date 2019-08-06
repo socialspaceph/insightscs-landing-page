@@ -35,8 +35,8 @@ export default function Home() {
               right: 0;
               bottom: 0%;
               height: 100%;
-              background-color: #666370;
-              // background: url("${linkPrefix}static/img/bg.jpg") center bottom no-repeat;
+              // background-color: #666370;
+              background: url("${linkPrefix}static/img/bg.jpg") center bottom no-repeat;
               background-size: cover;
               z-index: -1;
             }

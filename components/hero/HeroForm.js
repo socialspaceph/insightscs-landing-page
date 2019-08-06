@@ -47,6 +47,16 @@ export default function HeroForm({ theme }) {
             <HeroSubmit />
           ) : (
             <Form>
+              <h2
+                style={{
+                  margin: '0 0 2rem',
+                  fontWeight: 'normal',
+                  fontSize: '1.1rem',
+                  textAlign: 'center'
+                }}
+              >
+                Apply for Supply Chain Financing Today
+              </h2>
               <Field
                 name="name"
                 id="name"
@@ -84,7 +94,7 @@ export default function HeroForm({ theme }) {
                 type="submit"
                 disabled={status.submitting}
               >
-                {status.submitting ? 'Submitting...' : 'Submit'}
+                {status.submitting ? 'Sending...' : 'Send Application'}
               </Button>
             </Form>
           )
