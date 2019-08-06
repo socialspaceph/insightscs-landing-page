@@ -258,7 +258,7 @@ export default function Home() {
                   <div className="image-container">
                     <Image
                       src="https://via.placeholder.com/1200x800?text=InsightSCS"
-                      alt=""
+                      alt="Success Story Image"
                     />
                   </div>
                 </div>
