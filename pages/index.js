@@ -112,7 +112,7 @@ export default function Home() {
               </Headline>
               <div className="image-section">
                 <div className="left">
-                  <ul>
+                  <ul style={{ fontSize: '110%' }}>
                     <li>
                       Single platform for accounting, inventory, transport and
                       warehouse management.
@@ -122,7 +122,10 @@ export default function Home() {
                     <li>Faster payments. (up to 2-5 days)</li>
                   </ul>
                   <Link to="section1" spy={true} smooth={true} duration={1000}>
-                    <Button variant="primary" style={{ width: '100%' }}>
+                    <Button
+                      variant="primary"
+                      style={{ width: '100%', marginTop: '1rem' }}
+                    >
                       Send Application
                     </Button>
                   </Link>
@@ -205,14 +208,6 @@ export default function Home() {
               <div className="financing-item">
                 <Image src="/static/img/jg-summit.jpg" />
               </div>
-              {/* <Image
-                style={{ width: '30%' }}
-                src="https://via.placeholder.com/500x300?text=Financing+Partner"
-              />
-              <Image
-                style={{ width: '30%' }}
-                src=      "https://via.placeholder.com/500x300?text=Financing+Partner"
-              /> */}
               <style jsx>{`
                 margin-top: 4rem;
 
