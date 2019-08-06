@@ -130,8 +130,8 @@ export default function Home() {
                 <div className="right">
                   <div style={{ maxWidth: '300px', margin: '0 auto' }}>
                     <Image
-                      src={`${linkPrefix}/static/img/blockchain-pod.png`}
-                      alt=""
+                      src={`/static/img/blockchain-pod.png`}
+                      alt="InsightSCS mobile application preview"
                     />
                   </div>
                 </div>
@@ -198,17 +198,57 @@ export default function Home() {
             <Headline centered variant="small">
               Our financing partners
             </Headline>
-            <div
-              style={{ display: 'flex', maxWidth: '1000px', margin: '0 auto' }}
-            >
+            <div className="financing-partners">
+              <div className="financing-item">
+                <Image src="/static/img/robinsons-bank.png" />
+              </div>
+              <div className="financing-item">
+                <Image src="/static/img/jg-summit.jpg" />
+              </div>
               {/* <Image
                 style={{ width: '30%' }}
                 src="https://via.placeholder.com/500x300?text=Financing+Partner"
               />
               <Image
                 style={{ width: '30%' }}
-                src="https://via.placeholder.com/500x300?text=Financing+Partner"
+                src=      "https://via.placeholder.com/500x300?text=Financing+Partner"
               /> */}
+              <style jsx>{`
+                margin-top: 4rem;
+
+                .financing-item {
+                  display: block;
+
+                  max-width: 250px;
+                  margin: 0 auto 1rem;
+                }
+
+                .financing-item:nth-child(1) {
+                  display: flex;
+                }
+                .financing-item:nth-child(1) img {
+                  margin: auto 0;
+                }
+
+                @media (min-width: ${theme.breakpoints.md}) {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  .financing-item {
+                    padding: 2rem;
+                    display: inline-block;
+                    max-width: 350px;
+                    height: 300px;
+
+                    margin: 0;
+                  }
+
+                  .financing-item:nth-child(1) {
+                    border-right: 1px solid #ddd;
+                  }
+                }
+              `}</style>
             </div>
           </Section>
         </Container>
@@ -229,17 +269,24 @@ export default function Home() {
                 </div>
 
                 <div className="left">
-                  <ul>
-                    <li>BemBem Minimart</li>
-                    <li>
-                      Boracay-based SME that supplies fruits & vegetables to
-                      hotels and restaurants.
-                    </li>
-                    <li>
-                      4x monthly revenue growth, faster payout rate. (2-5 days
-                      versus 100+ days)
-                    </li>
-                  </ul>
+                  <p>
+                    Bembem Minimart sells fruits and vegetables to major hotels
+                    and restaurants in Boracay. Like other small businesses
+                    outside Metro Manila, they had difficulty accessing
+                    financing.
+                  </p>
+                  <p>
+                    Through InsightSCS's digitized logistics, Bembem Minimart
+                    was able to generate an immutable proof of delivery that
+                    they used to get lower rates from our fintech partners. They
+                    were also now being paid in days instead of months because
+                    they're usign one record instead of filling out dozens of
+                    papers after each delivery.
+                  </p>
+                  <p>
+                    In 2 months, Bembem Minimart grew from P200k to P1M in
+                    monthly revenue.
+                  </p>
                 </div>
                 <style jsx>
                   {`
