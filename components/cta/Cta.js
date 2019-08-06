@@ -29,7 +29,7 @@ export default function Cta() {
           <Rotate />
         </div>
       </div>
-      <Headline centered>Quality Your Business Today</Headline>
+      <Headline centered>Qualify Your Business Today</Headline>
       <Textline>
         Apply for supply chain financing and get access to the InsightSCS app
       </Textline>
