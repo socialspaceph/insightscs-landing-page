@@ -4,16 +4,16 @@ const theme = {
     gray: '#F2F2F2',
     darkgray: '#d1d1d1',
     white: '#FFF',
-    black: '#000',
+    black: '#000'
   },
 
   breakpoints: {
     sm: '400px',
-    md: '600px',
+    md: '650px',
     lg: '900px',
     xl: '1200px',
-    xxl: '1600px',
-  },
-}
+    xxl: '1600px'
+  }
+};
 
-export default theme
+export default theme;
