@@ -1,11 +1,11 @@
-import React from 'react';
-import ThemeContext from '../../lib/ThemeContext';
-import { Link } from 'react-scroll';
-import { Headline, Textline, Button } from '../../elements';
-import { MessageBubble, Wave, Heart, Mail, Rotate } from '../../icons';
+import React from 'react'
+import ThemeContext from '../../lib/ThemeContext'
+import { Link } from 'react-scroll'
+import { Headline, Textline, Button } from '../../elements'
+import { MessageBubble, Wave, Heart, Mail, Rotate } from '../../icons'
 
 export default function Cta() {
-  const theme = React.useContext(ThemeContext);
+  const theme = React.useContext(ThemeContext)
 
   return (
     <div className="cta-container">
@@ -29,17 +29,17 @@ export default function Cta() {
           <Rotate />
         </div>
       </div>
-      <Headline centered>Qualify Your Business Today</Headline>
-      <Textline>
+      <Headline centered variant="small">
         Apply for supply chain financing and get access to the InsightSCS app
-      </Textline>
+      </Headline>
+      <Textline />
       <Link to="section1" spy={true} smooth={true} duration={1000}>
         <Button
           className="button"
           variant="primary"
           style={{ marginTop: '1rem' }}
         >
-          Send Application
+          Start Application
         </Button>
       </Link>
       <style jsx>{`
@@ -106,5 +106,5 @@ export default function Cta() {
         }
       `}</style>
     </div>
-  );
+  )
 }

@@ -1,9 +1,9 @@
-import React from 'react';
-import getConfig from 'next-server/config';
-import Hero from '../components/hero';
-import Cta from '../components/cta';
-import ThemeContext from '../lib/ThemeContext';
-import { Link } from 'react-scroll';
+import React from 'react'
+import getConfig from 'next-server/config'
+import Hero from '../components/hero'
+import Cta from '../components/cta'
+import ThemeContext from '../lib/ThemeContext'
+import { Link } from 'react-scroll'
 
 import {
   Headline,
@@ -12,13 +12,13 @@ import {
   Section,
   Image,
   Button
-} from '../elements';
+} from '../elements'
 
-const { publicRuntimeConfig } = getConfig();
-const linkPrefix = publicRuntimeConfig.linkPrefix;
+const { publicRuntimeConfig } = getConfig()
+const linkPrefix = publicRuntimeConfig.linkPrefix
 
 export default function Home() {
-  const theme = React.useContext(ThemeContext);
+  const theme = React.useContext(ThemeContext)
 
   return (
     <>
@@ -107,12 +107,12 @@ export default function Home() {
         <div style={{ backgroundColor: '#f1f1f1' }}>
           <Container>
             <Section>
-              <Headline centered variant="small">
-                Lower financing risk with Blockchain proof of delivery
-              </Headline>
               <div className="image-section">
                 <div className="left">
-                  <ul style={{ fontSize: '110%' }}>
+                  <Headline variant="small">
+                    Lower financing risk with Blockchain proof of delivery
+                  </Headline>
+                  <ul style={{ padding: 0 }}>
                     <li>
                       Single platform for accounting, inventory, transport and
                       warehouse management.
@@ -122,18 +122,15 @@ export default function Home() {
                     <li>Faster payments. (up to 2-5 days)</li>
                   </ul>
                   <Link to="section1" spy={true} smooth={true} duration={1000}>
-                    <Button
-                      variant="primary"
-                      style={{ width: '100%', marginTop: '1rem' }}
-                    >
-                      Send Application
+                    <Button variant="primary" style={{ marginTop: '1rem' }}>
+                      Start Application
                     </Button>
                   </Link>
                 </div>
                 <div className="right">
-                  <div style={{ maxWidth: '300px', margin: '0 auto' }}>
+                  <div style={{ maxWidth: '800px', margin: '0 0 0 auto' }}>
                     <Image
-                      src={`/static/img/blockchain-pod.png`}
+                      src={`https://res.cloudinary.com/manfuku/image/upload/e_trim/w_1200/f_auto/q_auto/v1552647608/insightscs/photos/epod.png`}
                       alt="InsightSCS mobile application preview"
                     />
                   </div>
@@ -206,7 +203,10 @@ export default function Home() {
                 <Image src="/static/img/robinsons-bank.png" />
               </div>
               <div className="financing-item">
-                <Image src="/static/img/jg-summit.jpg" />
+                <Image src="/static/img/UnionBank-Logo_0.png" />
+              </div>
+              <div className="financing-item" style={{ maxWidth: '300px' }}>
+                <Image src="/static/img/vesl-logo-pink.png" />
               </div>
               <style jsx>{`
                 margin-top: 4rem;
@@ -216,6 +216,7 @@ export default function Home() {
 
                   max-width: 250px;
                   margin: 0 auto 1rem;
+                  margin-bottom 2rem; 
                 }
 
                 .financing-item:nth-child(1) {
@@ -225,7 +226,7 @@ export default function Home() {
                   margin: auto 0;
                 }
 
-                @media (min-width: ${theme.breakpoints.md}) {
+                @media (min-width: ${theme.breakpoints.lg}) {
                   display: flex;
                   align-items: center;
                   justify-content: center;
@@ -234,13 +235,13 @@ export default function Home() {
                     padding: 2rem;
                     display: inline-block;
                     max-width: 350px;
-                    height: 300px;
+                    // height: 300px;
 
                     margin: 0;
                   }
 
                   .financing-item:nth-child(1) {
-                    border-right: 1px solid #ddd;
+                    // border-right: 1px solid #ddd;
                   }
                 }
               `}</style>
@@ -358,5 +359,5 @@ export default function Home() {
         </Container>
       </div>
     </>
-  );
+  )
 }

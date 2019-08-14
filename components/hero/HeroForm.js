@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { heroValidationSchema } from '../../lib/validationSchemas';
-import { formSubmission } from '../../lib/formSubmission';
-import { Formik, Form, Field } from 'formik';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { heroValidationSchema } from '../../lib/validationSchemas'
+import { formSubmission } from '../../lib/formSubmission'
+import { Formik, Form, Field } from 'formik'
 
-import HeroSubmit from './HeroSubmit';
+import HeroSubmit from './HeroSubmit'
 
-import { Button, TextInputGroup } from '../../elements';
+import { Button, TextInputGroup } from '../../elements'
 
 // import * as gtag from "../../lib/gtag";
 
@@ -23,17 +23,17 @@ export default function HeroForm({ theme }) {
         }}
         onSubmit={(values, { setStatus, resetForm }) => {
           // Set form to submitting
-          setStatus({ submitting: true, success: false });
+          setStatus({ submitting: true, success: false })
 
           formSubmission(values)
             .then(() => {
-              resetForm();
-              setStatus({ submitting: false, success: true });
+              resetForm()
+              setStatus({ submitting: false, success: true })
             })
             .catch(err => {
-              console.log(err);
-              resetForm();
-            });
+              console.log(err)
+              resetForm()
+            })
           // Send gtag event
           // gtag.event({
           //   action: "submit_form",
@@ -94,7 +94,7 @@ export default function HeroForm({ theme }) {
                 type="submit"
                 disabled={status.submitting}
               >
-                {status.submitting ? 'Sending...' : 'Send Application'}
+                {status.submitting ? 'Sending...' : 'Start Application'}
               </Button>
             </Form>
           )
@@ -119,9 +119,9 @@ export default function HeroForm({ theme }) {
         `}
       </style>
     </div>
-  );
+  )
 }
 
 HeroForm.propTypes = {
   theme: PropTypes.object.isRequired
-};
+}
