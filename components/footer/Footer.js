@@ -1,14 +1,14 @@
-import React from 'react'
-import css from 'styled-jsx/css'
-import { Image, Container } from '../../elements'
-import ThemeContext from '../../lib/ThemeContext'
+import React from 'react';
+import css from 'styled-jsx/css';
+import { Image, Container } from '../../elements';
+import ThemeContext from '../../lib/ThemeContext';
 
 const { className, styles } = css.resolve`
   max-width: 200px;
-`
+`;
 
 export default function Footer() {
-  const theme = React.useContext(ThemeContext)
+  const theme = React.useContext(ThemeContext);
 
   return (
     <footer className="footer">
@@ -27,7 +27,7 @@ export default function Footer() {
             <br /> Investment Drive, Madrigal Business Park
             <br /> Ayala Alabang, Muntinlupa, 1778, Philippines
           </p>
-          <a href="mailto:info@insightscs.com">info@InsightSCS.com</a>
+          <a href="mailto:inquiry@insightscs.com">inquiry@InsightSCS.com</a>
           <p>
             Copyright {new Date().getFullYear()}. Patent Pending Philippines.
           </p>
@@ -60,5 +60,5 @@ export default function Footer() {
         }
       `}</style>
     </footer>
-  )
+  );
 }

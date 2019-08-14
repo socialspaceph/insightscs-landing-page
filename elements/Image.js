@@ -10,8 +10,14 @@ const linkPrefix = publicRuntimeConfig.linkPrefix;
  * @param {String} src source of image
  * @param {String} alt description of image
  */
-export default function Image({ src, alt, className }) {
-  return <img className={className} src={`${linkPrefix}${src}`} alt={alt} />;
+export default function Image({ src, alt, className, noPrefix }) {
+  return (
+    <img
+      className={className}
+      src={`${noPrefix ? "" : linkPrefix}${src}`}
+      alt={alt}
+    />
+  );
 }
 
 Image.propTypes = {

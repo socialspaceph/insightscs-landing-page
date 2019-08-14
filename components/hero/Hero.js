@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import website from "../../config/website";
+import React from 'react'
+import PropTypes from 'prop-types'
+import website from '../../config/website'
 
-import HeroForm from "./HeroForm";
-import SocialItem from "../socialItem";
-import { FacebookIcon } from "../../icons";
+import HeroForm from './HeroForm'
+import SocialItem from '../socialItem'
+import { FacebookIcon } from '../../icons'
 
 export default function Hero({ theme }) {
   return (
@@ -19,10 +19,10 @@ export default function Hero({ theme }) {
             </div>
           )}
         </div>
-        <h1 className="headline">Sa InsightSCS, Tuluy-tuloy ang Negosyo Mo.</h1>
+        <h1 className="headline">Supply Chain Finanching for SMEs</h1>
         <p>
-          Maximize your trucking and shipping business with shorter payouts and
-          end-to-end visibility with InsightSCS
+          Get access to lower financing rates and faster cash flow with
+          InsightSCS digitized logistics solutions. Quality your business today.
         </p>
       </div>
       <div className="right">
@@ -58,7 +58,7 @@ export default function Hero({ theme }) {
           }
 
           .headline {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-top: 0;
           }
 
@@ -86,9 +86,9 @@ export default function Hero({ theme }) {
         }
       `}</style>
     </header>
-  );
+  )
 }
 
 Hero.propTypes = {
   theme: PropTypes.object.isRequired
-};
+}

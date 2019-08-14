@@ -1,17 +1,24 @@
-import React from "react";
-import getConfig from "next-server/config";
-import Hero from "../components/hero";
-import Cta from "../components/cta";
-import ThemeContext from "../lib/ThemeContext";
+import React from 'react'
+import getConfig from 'next-server/config'
+import Hero from '../components/hero'
+import Cta from '../components/cta'
+import ThemeContext from '../lib/ThemeContext'
+import { Link } from 'react-scroll'
 
-import { Headline, Textline, Container, Section, Image } from "../elements";
-import { Shippers, Consignees, Transporters, Financers } from "../icons";
+import {
+  Headline,
+  Textline,
+  Container,
+  Section,
+  Image,
+  Button
+} from '../elements'
 
-const { publicRuntimeConfig } = getConfig();
-const linkPrefix = publicRuntimeConfig.linkPrefix;
+const { publicRuntimeConfig } = getConfig()
+const linkPrefix = publicRuntimeConfig.linkPrefix
 
 export default function Home() {
-  const theme = React.useContext(ThemeContext);
+  const theme = React.useContext(ThemeContext)
 
   return (
     <>
@@ -27,187 +34,106 @@ export default function Home() {
               left: 0;
               right: 0;
               bottom: 0%;
-              height: 100%;
+              min-height: 950px;
+              // background-color: #666370;
               background: url("${linkPrefix}static/img/bg.jpg") center bottom no-repeat;
               background-size: cover;
+              background-attachment: fixed; 
               z-index: -1;
             }
             `}
         </style>
       </Container>
-      <div style={{ backgroundColor: "#FFF" }}>
+      <div style={{ backgroundColor: '#FFF' }}>
         <div className="benefit-section">
           <div className="graybg" />
           <Section>
             <Container>
               <Headline centered variant="small">
-                All-in-one Logistics and Financing Solution
+                Small to medium manufacturers & distributors have limited access
+                to financing.
               </Headline>
-              <div className="benefits-container">
-                <div className="benefits__item">
-                  <div className="content">
-                    <div className="left">
-                      <Shippers style={{ width: "60px", height: "60px" }} />
-                    </div>
-                    <div className="right">
-                      <h3>Shippers</h3>
-                      <p>
-                        Increase transparency of price, shipment events, and
-                        ownership of the entire shipment process.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="benefits__item">
-                  <div className="content">
-                    <div className="left">
-                      <Consignees style={{ width: "60px", height: "60px" }} />
-                    </div>
-                    <div className="right">
-                      <h3>Consignees</h3>
-                      <p>
-                        Benefit from reduced documentation and compliance costs
-                        while increasing traceability.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="benefits__item">
-                  <div className="content">
-                    <div className="left">
-                      <Transporters style={{ width: "60px", height: "60px" }} />
-                    </div>
-                    <div className="right">
-                      <h3>Transporters</h3>
-                      <p>
-                        Accelerate payments and simplify claims settlement with
-                        enterprise-grade software.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="benefits__item">
-                  <div className="content">
-                    <div className="left">
-                      <Financers style={{ width: "60px", height: "60px" }} />
-                    </div>
-                    <div className="right">
-                      <h3>Financers</h3>
-                      <p>
-                        Get unprecedented visibility to order data and related
-                        records to reduce cost and risk.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <p style={{ textAlign: 'center' }}>
+                  Traditional logistics management makes it hard for SMEs to
+                  apply for bank financing because of lack of visibility and
+                  inefficient paper-based supply chain systems. Oftentimes,
+                  businesses have to wait{' '}
+                  <span style={{ color: 'red', fontWeight: 'bold' }}>
+                    100+ days
+                  </span>{' '}
+                  before they get paid. This makes growth extremely difficult,
+                  especially for businesses outside Metro Manila.
+                </p>
               </div>
             </Container>
           </Section>
           <style jsx>
             {`
-            .benefit-section {
-              position: relative;
-              margin-top: -100px;
-            }
-
-            .graybg {
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              width: 100%;
-              display: block;
-              content: "";
-              z-index: -1;
-              background: ${theme.palette.white};
-              border-top-left-radius: 4rem;
-              border-top-right-radius: 4rem;
-            }
-
-            .benefits-container {
-              display: flex;
-              justify-content: center;
-              flex-direction: column;
-              margin-top: 3rem;
-              flex-wrap: wrap;
-            }
-
-            .benefits__item {
-              width: 100%;
-              margin-bottom: 2rem;
-            }
-
-            .benefits__item .content {
-              display: flex;
-            }
-
-            .benefits__item .content .right {
-              padding-left: 1rem;
-            }
-
-            .benefits__item .content h3 {
-              margin-top: 0;
-            }
-
-            .benefits__item > img {
-              display: block;
-              width: 100%;
-            }
-
-            @media (min-width: ${theme.breakpoints.md}) {
-              .benefits-container {
-                flex-direction: row;
+              .benefit-section {
+                position: relative;
+                margin-top: -100px;
               }
 
-              .benefits__item {
-                max-width: 400px;
-                width: 48%;
-                padding: 1rem;
-                margin: 1%;
+              .graybg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                display: block;
+                content: '';
+                z-index: -1;
+                background: ${theme.palette.white};
+                border-top-left-radius: 4rem;
+                border-top-right-radius: 4rem;
               }
-            }
 
-            // @media (min-width: ${theme.breakpoints.lg}) {
-            //   .benefits__item {
-            //     width: 31.33%;
-            //     margin: 1%;
-            //   }
-            // }
-          `}
+              @media (min-width: ${theme.breakpoints.md}) {
+                .benefits-container {
+                  flex-direction: row;
+                }
+
+                .benefits__item {
+                  max-width: 400px;
+                  width: 48%;
+                  padding: 1rem;
+                  margin: 1%;
+                }
+              }
+            `}
           </style>
         </div>
-        <div style={{ backgroundColor: "#f1f1f1" }}>
+        <div style={{ backgroundColor: '#f1f1f1' }}>
           <Container>
             <Section>
               <div className="image-section">
                 <div className="left">
                   <Headline variant="small">
-                    Traditional logistics management usually causes goods or
-                    services to be paid in{" "}
-                    <span style={{ color: "#FF0000" }}>100+ days</span>
+                    Lower financing risk with Blockchain proof of delivery
                   </Headline>
-                  {/* <p>
-                    Traditional logistics management usually causes goods or
-                    services to be paid in months.
-                  </p> */}
-                  {/* <div className="cta-button" href="#">
-                  <ScrollLink
-                    to="section1"
-                    spy={true}
-                    smooth={true}
-                    duration={1000}
-                  >
-                    Start Now
-                  </ScrollLink>
-                  <span>
-                    <ChevronRight />
-                  </span>
-                </div> */}
+                  <ul className="list-container">
+                    <li>
+                      Single platform for accounting, inventory, transport and
+                      warehouse management.
+                    </li>
+                    <li>Secure and immutable proof of delivery.</li>
+                    <li>Better rates from banks.</li>
+                    <li>Faster payments. (up to 2-5 days)</li>
+                  </ul>
+                  <Link to="section1" spy={true} smooth={true} duration={1000}>
+                    <Button variant="primary" style={{ marginTop: '1rem' }}>
+                      Start Application
+                    </Button>
+                  </Link>
                 </div>
                 <div className="right">
-                  <div style={{ maxWidth: "500px", marginLeft: "auto" }}>
-                    <Image src="/static/img/stress.svg" alt="" />
+                  <div className="insight-app-image">
+                    <Image
+                      src={`https://res.cloudinary.com/manfuku/image/upload/e_trim/w_1200/f_auto/q_auto/v1552647608/insightscs/photos/epod.png`}
+                      alt="InsightSCS mobile application preview"
+                    />
                   </div>
                 </div>
                 <style jsx>
@@ -215,6 +141,185 @@ export default function Home() {
                     .image-section {
                       display: flex;
                       flex-direction: column;
+                    }
+
+                    .list-container {
+                      padding-left: 1rem;
+                      list-style: inside;
+                    }
+
+                    .cta-button {
+                      color: ${theme.palette.primary};
+                      letter-spacing: 1px;
+                      text-decoration: none;
+                      text-transform: uppercase;
+                      font-weight: bold;
+                      position: relative;
+                      display: inline-block;
+                      cursor: pointer;
+                    }
+
+                    .cta-button span {
+                      display: inline-block;
+                      width: 18px;
+                      height: 18px;
+                      position: absolute;
+                      top: 50%;
+                      right: -1rem;
+                      transform: translate(0, -50%);
+                      fill: ${theme.palette.primary};
+                      transition: all 200ms ease-in-out;
+                    }
+
+                    .cta-button:hover span {
+                      transform: translate(5px, -50%);
+                    }
+
+                    .insight-app-image {
+                      max-width: 400px;
+                      margin: 0 auto;
+                    }
+
+                    .left {
+                      margin-bottom: 2rem;
+                      text-align: center;
+                    }
+
+                    @media (min-width: ${theme.breakpoints.lg}) {
+                      .image-section {
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                      }
+
+                      .insight-app-image {
+                        max-width: 680px;
+                      }
+
+                      .list-container {
+                        list-style: outside;
+                      }
+
+                      .left {
+                        width: 40%;
+                        padding-right: 2rem;
+                        text-align: left;
+                        margin-right: 2rem;
+                      }
+                    }
+                  `}
+                </style>
+              </div>
+            </Section>
+          </Container>
+        </div>
+        <Container>
+          <Section>
+            <Headline centered variant="small">
+              Our financing partners
+            </Headline>
+            <div className="financing-partners">
+              <div className="financing-item">
+                <Image
+                  src="/static/img/robinsons-bank.png"
+                  alt="Robinsons Bank"
+                />
+              </div>
+              <div className="financing-item">
+                <Image
+                  src="/static/img/UnionBank-Logo_0.png"
+                  alt="Union Bank"
+                />
+              </div>
+              <div className="financing-item" style={{ maxWidth: '300px' }}>
+                <Image src="/static/img/vesl-logo-pink.png" alt="Vesl" />
+              </div>
+              <style jsx>{`
+                margin-top: 4rem;
+
+                .financing-item {
+                  display: block;
+
+                  max-width: 250px;
+                  margin: 0 auto 1rem;
+                  margin-bottom 2rem; 
+                }
+
+                .financing-item:nth-child(1) {
+                  display: flex;
+                }
+                .financing-item:nth-child(1) img {
+                  margin: auto 0;
+                }
+
+                @media (min-width: ${theme.breakpoints.lg}) {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  .financing-item {
+                    padding: 2rem;
+                    display: inline-block;
+                    max-width: 350px;
+                    // height: 300px;
+
+                    margin: 0;
+                  }
+
+                  .financing-item:nth-child(1) {
+                    // border-right: 1px solid #ddd;
+                  }
+                }
+              `}</style>
+            </div>
+          </Section>
+        </Container>
+        <div style={{ backgroundColor: '#f1f1f1' }}>
+          <Container>
+            <Section>
+              <Headline centered variant="small">
+                Success Story
+              </Headline>
+              <div className="image-section">
+                <div className="right">
+                  <div className="image-container">
+                    <Image
+                      src="https://via.placeholder.com/1200x800?text=InsightSCS"
+                      alt="Success Story Image"
+                    />
+                  </div>
+                </div>
+
+                <div className="left">
+                  <p>
+                    Bembem Minimart sells fruits and vegetables to major hotels
+                    and restaurants in Boracay. Like other small businesses
+                    outside Metro Manila, they had difficulty accessing
+                    financing.
+                  </p>
+                  <p>
+                    Through InsightSCS's digitized logistics, Bembem Minimart
+                    was able to generate an immutable proof of delivery that
+                    they used to get lower rates from our fintech partners. They
+                    were also now being paid in days instead of months because
+                    they're usign one record instead of filling out dozens of
+                    papers after each delivery.
+                  </p>
+                  <p>
+                    In 2 months, Bembem Minimart grew from P200k to P1M in
+                    monthly revenue.
+                  </p>
+                </div>
+                <style jsx>
+                  {`
+                    .image-section {
+                      display: flex;
+                      flex-direction: column;
+                    }
+
+                    .image-container {
+                      margin: 0 auto;
+                      max-width: 500px;
                     }
 
                     .cta-button {
@@ -249,20 +354,22 @@ export default function Home() {
                       text-align: center;
                     }
 
-                    @media (min-width: ${theme.breakpoints.md}) {
+                    @media (min-width: ${theme.breakpoints.lg}) {
                       .image-section {
                         flex-direction: row;
+                        justify-content: center;
                         align-items: center;
                       }
 
                       .left {
-                        width: 40%;
                         padding-right: 2rem;
                         text-align: left;
+                        width: 40%;
                       }
 
                       .right {
-                        width: 60%;
+                        // width: 60%;
+                        padding: 2rem;
                       }
                     }
                   `}
@@ -270,99 +377,13 @@ export default function Home() {
               </div>
             </Section>
           </Container>
-          {/* <Container>
-            <Section>
-              <Headline centered variant="small">
-                Pag Manu-Mano ang Pag-Monitor, Matagal ang Bayaran
-              </Headline>
-              <Textline>
-                Traditional logistics management usually causes goods or
-                services to be paid in months.
-              </Textline>
-              <div
-                className="svg-illust"
-                style={{ margin: "1rem auto", maxWidth: "1100px" }}
-              >
-                <div className="web-view">
-                  <Image
-                    src="/static/img/illust1.svg"
-                    alt="Diagram of the problem"
-                  />
-                </div>
-                <div className="mobile-view">
-                  <Image
-                    src="/static/img/illust1-mobile.svg"
-                    alt="Diagram of the problem"
-                  />
-                </div>
-                <style jsx>
-                  {`
-                    .web-view {
-                      display: none;
-                    }
-
-                    @media (min-width: 800px) {
-                      .web-view {
-                        display: block;
-                      }
-                      .mobile-view {
-                        display: none;
-                      }
-                    }
-                  `}
-                </style>
-              </div>
-            </Section>
-          </Container> */}
         </div>
         <Container>
-          <Section>
-            <Headline centered variant="small">
-              Sa InsightSCS, Mababayaran ka sa Loob ng 5 - 10 na Araw
-            </Headline>
-            <Textline>
-              Eliminate non-essential costs and speed up payments through
-              blockchain-enabled processes
-            </Textline>
-            <div
-              className="svg-illust"
-              style={{ margin: "1rem auto", maxWidth: "1100px" }}
-            >
-              <div className="web-view">
-                <Image
-                  src="/static/img/illust2.svg"
-                  alt="Diagram of the solution"
-                />
-              </div>
-              <div className="mobile-view">
-                <Image
-                  src="/static/img/illust2-mobile.svg"
-                  alt="Diagram of the solution"
-                />
-              </div>
-              <style jsx>
-                {`
-                  .web-view {
-                    display: none;
-                  }
-
-                  @media (min-width: 800px) {
-                    .web-view {
-                      display: block;
-                    }
-                    .mobile-view {
-                      display: none;
-                    }
-                  }
-                `}
-              </style>
-            </div>
-          </Section>
           <Section>
             <Cta />
           </Section>
         </Container>
       </div>
     </>
-  );
+  )
 }
