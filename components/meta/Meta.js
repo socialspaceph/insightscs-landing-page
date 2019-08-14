@@ -1,9 +1,9 @@
-import React from "react";
-import Head from "next/head";
+import React from 'react'
+import Head from 'next/head'
 // import getConfig from "next-server/config";
 
-import website from "../../config/website";
-import normalize from "../../styles/normalize";
+import website from '../../config/website'
+import normalize from '../../styles/normalize'
 
 // const { publicRuntimeConfig } = getConfig();
 // const linkPrefix = publicRuntimeConfig.linkPrefix;
@@ -41,8 +41,9 @@ export default function Meta() {
         body {
           margin: 0;
           padding: 0;
+          overflow-x: hidden;
 
-          font-family: "Alegreya Sans", sans-serif;
+          font-family: 'Alegreya Sans', sans-serif;
           font-size: 110%;
         }
 
@@ -57,7 +58,7 @@ export default function Meta() {
         h4,
         h5,
         h6 {
-          font-family: "Poppins", sans-serif;
+          font-family: 'Poppins', sans-serif;
         }
 
         p {
@@ -70,5 +71,5 @@ export default function Meta() {
         }
       `}</style>
     </React.Fragment>
-  );
+  )
 }

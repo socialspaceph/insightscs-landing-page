@@ -34,10 +34,11 @@ export default function Home() {
               left: 0;
               right: 0;
               bottom: 0%;
-              height: 100%;
+              min-height: 950px;
               // background-color: #666370;
               background: url("${linkPrefix}static/img/bg.jpg") center bottom no-repeat;
               background-size: cover;
+              background-attachment: fixed; 
               z-index: -1;
             }
             `}
@@ -112,7 +113,7 @@ export default function Home() {
                   <Headline variant="small">
                     Lower financing risk with Blockchain proof of delivery
                   </Headline>
-                  <ul style={{ padding: 0 }}>
+                  <ul className="list-container">
                     <li>
                       Single platform for accounting, inventory, transport and
                       warehouse management.
@@ -128,7 +129,7 @@ export default function Home() {
                   </Link>
                 </div>
                 <div className="right">
-                  <div style={{ maxWidth: '800px', margin: '0 0 0 auto' }}>
+                  <div className="insight-app-image">
                     <Image
                       src={`https://res.cloudinary.com/manfuku/image/upload/e_trim/w_1200/f_auto/q_auto/v1552647608/insightscs/photos/epod.png`}
                       alt="InsightSCS mobile application preview"
@@ -140,6 +141,11 @@ export default function Home() {
                     .image-section {
                       display: flex;
                       flex-direction: column;
+                    }
+
+                    .list-container {
+                      padding-left: 1rem;
+                      list-style: inside;
                     }
 
                     .cta-button {
@@ -169,15 +175,29 @@ export default function Home() {
                       transform: translate(5px, -50%);
                     }
 
-                    .left {
-                      margin-bottom: 2rem;
+                    .insight-app-image {
+                      max-width: 400px;
+                      margin: 0 auto;
                     }
 
-                    @media (min-width: ${theme.breakpoints.md}) {
+                    .left {
+                      margin-bottom: 2rem;
+                      text-align: center;
+                    }
+
+                    @media (min-width: ${theme.breakpoints.lg}) {
                       .image-section {
                         flex-direction: row;
                         align-items: center;
                         justify-content: center;
+                      }
+
+                      .insight-app-image {
+                        max-width: 680px;
+                      }
+
+                      .list-container {
+                        list-style: outside;
                       }
 
                       .left {
@@ -200,13 +220,19 @@ export default function Home() {
             </Headline>
             <div className="financing-partners">
               <div className="financing-item">
-                <Image src="/static/img/robinsons-bank.png" />
+                <Image
+                  src="/static/img/robinsons-bank.png"
+                  alt="Robinsons Bank"
+                />
               </div>
               <div className="financing-item">
-                <Image src="/static/img/UnionBank-Logo_0.png" />
+                <Image
+                  src="/static/img/UnionBank-Logo_0.png"
+                  alt="Union Bank"
+                />
               </div>
               <div className="financing-item" style={{ maxWidth: '300px' }}>
-                <Image src="/static/img/vesl-logo-pink.png" />
+                <Image src="/static/img/vesl-logo-pink.png" alt="Vesl" />
               </div>
               <style jsx>{`
                 margin-top: 4rem;

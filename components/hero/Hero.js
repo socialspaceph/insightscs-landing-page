@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import website from '../../config/website';
+import React from 'react'
+import PropTypes from 'prop-types'
+import website from '../../config/website'
 
-import HeroForm from './HeroForm';
-import SocialItem from '../socialItem';
-import { FacebookIcon } from '../../icons';
+import HeroForm from './HeroForm'
+import SocialItem from '../socialItem'
+import { FacebookIcon } from '../../icons'
 
 export default function Hero({ theme }) {
   return (
@@ -86,9 +86,9 @@ export default function Hero({ theme }) {
         }
       `}</style>
     </header>
-  );
+  )
 }
 
 Hero.propTypes = {
   theme: PropTypes.object.isRequired
-};
+}
