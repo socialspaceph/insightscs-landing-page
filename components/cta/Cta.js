@@ -38,7 +38,7 @@ export default function Cta() {
           variant="primary"
           style={{ marginTop: '1rem' }}
         >
-          Start Application
+          Start Application >
         </Button>
       </Link>
       <style jsx>{`

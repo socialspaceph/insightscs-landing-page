@@ -21,6 +21,12 @@ export default function Meta() {
         <meta name="author" content={website.siteAuthor} />
 
         <link
+          rel="shortcut icon"
+          type="image/x-icon"
+          href="/static/img/favicon.png"
+        />
+
+        <link
           href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap"
           rel="stylesheet"
         />

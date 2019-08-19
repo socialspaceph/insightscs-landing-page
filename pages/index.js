@@ -124,7 +124,7 @@ export default function Home() {
                   </ul>
                   <Link to="section1" spy={true} smooth={true} duration={1000}>
                     <Button variant="primary" style={{ marginTop: '1rem' }}>
-                      Start Application
+                      Start Application >
                     </Button>
                   </Link>
                 </div>
