@@ -284,7 +284,7 @@ export default function Home() {
                 <div className="right">
                   <div className="image-container">
                     <Image
-                      src="https://via.placeholder.com/1200x800?text=InsightSCS"
+                      src="/static/img/success-story.jpg"
                       alt="Success Story Image"
                     />
                   </div>
@@ -292,13 +292,13 @@ export default function Home() {
 
                 <div className="left">
                   <p>
-                    Bembem Minimart sells fruits and vegetables to major hotels
-                    and restaurants in Boracay. Like other small businesses
-                    outside Metro Manila, they had difficulty accessing
-                    financing.
+                    Dechan's Gardeneca sells fruits and vegetables to major
+                    hotels and restaurants in Boracay. Like other small
+                    businesses outside Metro Manila, they had difficulty
+                    accessing financing.
                   </p>
                   <p>
-                    Through InsightSCS's digitized logistics, Bembem Minimart
+                    Through InsightSCS's digitized logistics, Dechan's Gardeneca
                     was able to generate an immutable proof of delivery that
                     they used to get lower rates from our fintech partners. They
                     were also now being paid in days instead of months because
@@ -306,7 +306,7 @@ export default function Home() {
                     papers after each delivery.
                   </p>
                   <p>
-                    In 2 months, Bembem Minimart grew from P200k to P1M in
+                    In 2 months, Dechan's Gardeneca grew from P200k to P1M in
                     monthly revenue.
                   </p>
                 </div>

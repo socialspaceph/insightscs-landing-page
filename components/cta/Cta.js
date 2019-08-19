@@ -32,7 +32,6 @@ export default function Cta() {
       <Headline centered variant="small">
         Apply for supply chain financing and get access to the InsightSCS app
       </Headline>
-      <Textline />
       <Link to="section1" spy={true} smooth={true} duration={1000}>
         <Button
           className="button"
