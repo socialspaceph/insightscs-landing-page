@@ -5,5 +5,15 @@ import Section from './Section'
 import Button from './Button'
 import Image from './Image'
 import TextInputGroup from './formInputs/TextInputGroup'
+import SelectInputGroup from './formInputs/SelectInputGroup'
 
-export { Headline, Textline, Container, Section, Button, TextInputGroup, Image }
+export {
+  Headline,
+  Textline,
+  Container,
+  Section,
+  Button,
+  TextInputGroup,
+  Image,
+  SelectInputGroup
+}

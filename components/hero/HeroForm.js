@@ -6,7 +6,7 @@ import { Formik, Form, Field } from 'formik'
 
 import HeroSubmit from './HeroSubmit'
 
-import { Button, TextInputGroup } from '../../elements'
+import { Button, TextInputGroup, SelectInputGroup } from '../../elements'
 
 // import * as gtag from "../../lib/gtag";
 
@@ -19,13 +19,23 @@ export default function HeroForm({ theme }) {
           name: '',
           email: '',
           contact: '',
-          company_name: ''
+          company_name: '',
+          revenue: ''
         }}
         onSubmit={(values, { setStatus, resetForm }) => {
           // Set form to submitting
           setStatus({ submitting: true, success: false })
 
-          formSubmission(values)
+          const { name, email, contact, company_name, revenue } = values
+          const formValues = {
+            name,
+            email,
+            contact,
+            company_name,
+            revenue: revenue.value
+          }
+
+          formSubmission(formValues)
             .then(() => {
               resetForm()
               setStatus({ submitting: false, success: true })
@@ -42,7 +52,15 @@ export default function HeroForm({ theme }) {
           // });
         }}
       >
-        {({ status = { submitting: false, success: false } }) =>
+        {({
+          touched,
+          errors,
+          values,
+          isSubmitting,
+          setFieldValue,
+          setFieldTouched,
+          status = { submitting: false, success: false }
+        }) =>
           status.success ? (
             <HeroSubmit />
           ) : (
@@ -88,6 +106,25 @@ export default function HeroForm({ theme }) {
                 required
                 component={TextInputGroup}
               />
+              <SelectInputGroup
+                id="revenue"
+                name="revenue"
+                value={values.revenue}
+                options={[
+                  { label: '0 - 50,000', value: '0 - 50,000' },
+                  { label: '50,001 - 100,000', value: '50,001 - 100,000' },
+                  { label: '100,000 - 250,000', value: '100,000 - 250,000' },
+                  { label: '250,000 - 500,000', value: '250,000 - 500,000' },
+                  { label: '500k+', value: '500k+' }
+                ]}
+                label="How much is your average monthly revenue?"
+                onChange={setFieldValue}
+                onBlur={setFieldTouched}
+                error={errors.revenue}
+                touched={touched.revenue}
+                required
+              />
+              {console.log(values)}
               <Button
                 variant="primary"
                 block
